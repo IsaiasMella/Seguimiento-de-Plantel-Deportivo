@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Seguimiento_de_Plantel_Deportivo
 {
-    public partial class Form1 : Form
+    public partial class FSeguimientoDePlantelDepo : Form
     {        
-        public Form1()
+        public FSeguimientoDePlantelDepo()
         {
             InitializeComponent();
         }

@@ -45,25 +45,25 @@
             this.TNacionalidad = new System.Windows.Forms.TextBox();
             this.MTBTelefono = new System.Windows.Forms.MaskedTextBox();
             this.GBSexo = new System.Windows.Forms.GroupBox();
-            this.RBFemenino = new System.Windows.Forms.RadioButton();
             this.RBMasculino = new System.Windows.Forms.RadioButton();
+            this.RBFemenino = new System.Windows.Forms.RadioButton();
             this.DTPFechaDeNacimiento = new System.Windows.Forms.DateTimePicker();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.RBCuerpoTecnico = new System.Windows.Forms.RadioButton();
             this.RBJugador = new System.Windows.Forms.RadioButton();
+            this.RBCuerpoTecnico = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.NUDDorsal = new System.Windows.Forms.NumericUpDown();
-            this.label9 = new System.Windows.Forms.Label();
-            this.CBPosicion = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.CBPiernaHabil = new System.Windows.Forms.ComboBox();
-            this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.TCargo = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.CBPiernaHabil = new System.Windows.Forms.ComboBox();
+            this.CBPosicion = new System.Windows.Forms.ComboBox();
+            this.NUDDorsal = new System.Windows.Forms.NumericUpDown();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.BContrato = new System.Windows.Forms.Button();
             this.GBSexo.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -218,17 +218,6 @@
             this.GBSexo.TabStop = false;
             this.GBSexo.Text = "Sexo";
             // 
-            // RBFemenino
-            // 
-            this.RBFemenino.AutoSize = true;
-            this.RBFemenino.Location = new System.Drawing.Point(111, 32);
-            this.RBFemenino.Name = "RBFemenino";
-            this.RBFemenino.Size = new System.Drawing.Size(71, 17);
-            this.RBFemenino.TabIndex = 0;
-            this.RBFemenino.TabStop = true;
-            this.RBFemenino.Text = "Femenino";
-            this.RBFemenino.UseVisualStyleBackColor = true;
-            // 
             // RBMasculino
             // 
             this.RBMasculino.AutoSize = true;
@@ -239,6 +228,17 @@
             this.RBMasculino.TabStop = true;
             this.RBMasculino.Text = "Masculino";
             this.RBMasculino.UseVisualStyleBackColor = true;
+            // 
+            // RBFemenino
+            // 
+            this.RBFemenino.AutoSize = true;
+            this.RBFemenino.Location = new System.Drawing.Point(111, 32);
+            this.RBFemenino.Name = "RBFemenino";
+            this.RBFemenino.Size = new System.Drawing.Size(71, 17);
+            this.RBFemenino.TabIndex = 0;
+            this.RBFemenino.TabStop = true;
+            this.RBFemenino.Text = "Femenino";
+            this.RBFemenino.UseVisualStyleBackColor = true;
             // 
             // DTPFechaDeNacimiento
             // 
@@ -259,17 +259,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Profesion";
             // 
-            // RBCuerpoTecnico
-            // 
-            this.RBCuerpoTecnico.AutoSize = true;
-            this.RBCuerpoTecnico.Location = new System.Drawing.Point(93, 31);
-            this.RBCuerpoTecnico.Name = "RBCuerpoTecnico";
-            this.RBCuerpoTecnico.Size = new System.Drawing.Size(101, 17);
-            this.RBCuerpoTecnico.TabIndex = 0;
-            this.RBCuerpoTecnico.TabStop = true;
-            this.RBCuerpoTecnico.Text = "Cuerpo Técnico";
-            this.RBCuerpoTecnico.UseVisualStyleBackColor = true;
-            // 
             // RBJugador
             // 
             this.RBJugador.AutoSize = true;
@@ -280,6 +269,17 @@
             this.RBJugador.TabStop = true;
             this.RBJugador.Text = "Jugador";
             this.RBJugador.UseVisualStyleBackColor = true;
+            // 
+            // RBCuerpoTecnico
+            // 
+            this.RBCuerpoTecnico.AutoSize = true;
+            this.RBCuerpoTecnico.Location = new System.Drawing.Point(93, 31);
+            this.RBCuerpoTecnico.Name = "RBCuerpoTecnico";
+            this.RBCuerpoTecnico.Size = new System.Drawing.Size(101, 17);
+            this.RBCuerpoTecnico.TabIndex = 0;
+            this.RBCuerpoTecnico.TabStop = true;
+            this.RBCuerpoTecnico.Text = "Cuerpo Técnico";
+            this.RBCuerpoTecnico.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
@@ -313,14 +313,61 @@
             this.groupBox3.Text = "Cuerpo Técnico";
             this.groupBox3.Visible = false;
             // 
-            // label8
+            // textBox1
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 20);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(37, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Dorsal";
+            this.textBox1.Location = new System.Drawing.Point(92, 61);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 1;
+            // 
+            // TCargo
+            // 
+            this.TCargo.Location = new System.Drawing.Point(92, 26);
+            this.TCargo.Name = "TCargo";
+            this.TCargo.Size = new System.Drawing.Size(100, 20);
+            this.TCargo.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(19, 64);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Especialidad";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(20, 29);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Cargo";
+            // 
+            // CBPiernaHabil
+            // 
+            this.CBPiernaHabil.FormattingEnabled = true;
+            this.CBPiernaHabil.Items.AddRange(new object[] {
+            "Derecha",
+            "Izquierda"});
+            this.CBPiernaHabil.Location = new System.Drawing.Point(87, 84);
+            this.CBPiernaHabil.Name = "CBPiernaHabil";
+            this.CBPiernaHabil.Size = new System.Drawing.Size(121, 21);
+            this.CBPiernaHabil.TabIndex = 2;
+            // 
+            // CBPosicion
+            // 
+            this.CBPosicion.FormattingEnabled = true;
+            this.CBPosicion.Items.AddRange(new object[] {
+            "Arquero",
+            "Defensor",
+            "Mediocampista",
+            "Delantero"});
+            this.CBPosicion.Location = new System.Drawing.Point(87, 48);
+            this.CBPosicion.Name = "CBPosicion";
+            this.CBPosicion.Size = new System.Drawing.Size(121, 21);
+            this.CBPosicion.TabIndex = 2;
             // 
             // NUDDorsal
             // 
@@ -344,27 +391,14 @@
             0,
             0});
             // 
-            // label9
+            // label11
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 56);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(47, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Posición";
-            // 
-            // CBPosicion
-            // 
-            this.CBPosicion.FormattingEnabled = true;
-            this.CBPosicion.Items.AddRange(new object[] {
-            "Arquero",
-            "Defensor",
-            "Mediocampista",
-            "Delantero"});
-            this.CBPosicion.Location = new System.Drawing.Point(87, 48);
-            this.CBPosicion.Name = "CBPosicion";
-            this.CBPosicion.Size = new System.Drawing.Size(121, 21);
-            this.CBPosicion.TabIndex = 2;
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(17, 130);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(47, 13);
+            this.label11.TabIndex = 0;
+            this.label11.Text = "Posición";
             // 
             // label10
             // 
@@ -375,57 +409,23 @@
             this.label10.TabIndex = 0;
             this.label10.Text = "Pierna Habil";
             // 
-            // label11
+            // label9
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(17, 130);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(47, 13);
-            this.label11.TabIndex = 0;
-            this.label11.Text = "Posición";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 56);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(47, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Posición";
             // 
-            // CBPiernaHabil
+            // label8
             // 
-            this.CBPiernaHabil.FormattingEnabled = true;
-            this.CBPiernaHabil.Items.AddRange(new object[] {
-            "Derecha",
-            "Izquierda"});
-            this.CBPiernaHabil.Location = new System.Drawing.Point(87, 84);
-            this.CBPiernaHabil.Name = "CBPiernaHabil";
-            this.CBPiernaHabil.Size = new System.Drawing.Size(121, 21);
-            this.CBPiernaHabil.TabIndex = 2;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(20, 29);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Cargo";
-            // 
-            // TCargo
-            // 
-            this.TCargo.Location = new System.Drawing.Point(92, 26);
-            this.TCargo.Name = "TCargo";
-            this.TCargo.Size = new System.Drawing.Size(100, 20);
-            this.TCargo.TabIndex = 1;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(19, 64);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 13);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Especialidad";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(92, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 20);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(37, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Dorsal";
             // 
             // BContrato
             // 

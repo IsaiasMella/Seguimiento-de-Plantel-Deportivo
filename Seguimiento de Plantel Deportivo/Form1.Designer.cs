@@ -1,6 +1,6 @@
 ﻿namespace Seguimiento_de_Plantel_Deportivo
 {
-    partial class Form1
+    partial class FSeguimientoDePlantelDepo
     {
         /// <summary>
         /// Variable del diseñador necesaria.
@@ -39,11 +39,11 @@
             this.CBJugador = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.BBuscarJugador = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.BBuscarLesion = new System.Windows.Forms.Button();
             this.listBox4 = new System.Windows.Forms.ListBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.BBuscarLesion = new System.Windows.Forms.Button();
-            this.BBuscarJugador = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.BBuscarContratos = new System.Windows.Forms.Button();
             this.listBox2 = new System.Windows.Forms.ListBox();
@@ -156,6 +156,15 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Jugadores";
             // 
+            // BBuscarJugador
+            // 
+            this.BBuscarJugador.Location = new System.Drawing.Point(62, 110);
+            this.BBuscarJugador.Name = "BBuscarJugador";
+            this.BBuscarJugador.Size = new System.Drawing.Size(75, 23);
+            this.BBuscarJugador.TabIndex = 5;
+            this.BBuscarJugador.Text = "Buscar";
+            this.BBuscarJugador.UseVisualStyleBackColor = true;
+            // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.BBuscarLesion);
@@ -167,6 +176,15 @@
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lesion";
+            // 
+            // BBuscarLesion
+            // 
+            this.BBuscarLesion.Location = new System.Drawing.Point(64, 70);
+            this.BBuscarLesion.Name = "BBuscarLesion";
+            this.BBuscarLesion.Size = new System.Drawing.Size(75, 23);
+            this.BBuscarLesion.TabIndex = 5;
+            this.BBuscarLesion.Text = "Buscar";
+            this.BBuscarLesion.UseVisualStyleBackColor = true;
             // 
             // listBox4
             // 
@@ -185,28 +203,10 @@
             "Defensores",
             "Mediocampistas",
             "Delanteros"});
-            this.comboBox2.Location = new System.Drawing.Point(43, 43);
+            this.comboBox2.Location = new System.Drawing.Point(42, 43);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 4;
-            // 
-            // BBuscarLesion
-            // 
-            this.BBuscarLesion.Location = new System.Drawing.Point(62, 70);
-            this.BBuscarLesion.Name = "BBuscarLesion";
-            this.BBuscarLesion.Size = new System.Drawing.Size(75, 23);
-            this.BBuscarLesion.TabIndex = 5;
-            this.BBuscarLesion.Text = "Buscar";
-            this.BBuscarLesion.UseVisualStyleBackColor = true;
-            // 
-            // BBuscarJugador
-            // 
-            this.BBuscarJugador.Location = new System.Drawing.Point(62, 110);
-            this.BBuscarJugador.Name = "BBuscarJugador";
-            this.BBuscarJugador.Size = new System.Drawing.Size(75, 23);
-            this.BBuscarJugador.TabIndex = 5;
-            this.BBuscarJugador.Text = "Buscar";
-            this.BBuscarJugador.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -248,7 +248,7 @@
             this.comboBox3.Size = new System.Drawing.Size(121, 21);
             this.comboBox3.TabIndex = 4;
             // 
-            // Form1
+            // FSeguimientoDePlantelDepo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -258,8 +258,8 @@
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "FSeguimientoDePlantelDepo";
+            this.Text = "Seguimiento del Plantel";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
