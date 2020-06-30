@@ -72,6 +72,7 @@
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
             this.personalToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.personalToolStripMenuItem.Text = "Personal";
+            this.personalToolStripMenuItem.Click += new System.EventHandler(this.personalToolStripMenuItem_Click);
             // 
             // contratosToolStripMenuItem
             // 
@@ -260,6 +261,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FSeguimientoDePlantelDepo";
             this.Text = "Seguimiento del Plantel";
+            this.Load += new System.EventHandler(this.FSeguimientoDePlantelDepo_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

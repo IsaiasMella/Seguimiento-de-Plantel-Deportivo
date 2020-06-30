@@ -109,7 +109,7 @@
             // MTBdni
             // 
             this.MTBdni.Location = new System.Drawing.Point(127, 19);
-            this.MTBdni.Mask = "99.999.99";
+            this.MTBdni.Mask = "99,999,999";
             this.MTBdni.Name = "MTBdni";
             this.MTBdni.Size = new System.Drawing.Size(100, 20);
             this.MTBdni.TabIndex = 2;
