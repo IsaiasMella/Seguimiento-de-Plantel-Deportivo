@@ -54,7 +54,7 @@ namespace Seguimiento_de_Plantel_Deportivo
         }
         #endregion
         #region Constructores
-        public Jugador(int dni, string nombre, string apellido, string domicilio, string telefono, string nacionalidad, DateTime fechaNac, double sueldo, int plazoContrato, DateTime fechaContratacion, int dorsal, string posicion, string piernaHabil ) : base(dni, nombre, apellido, domicilio, telefono, nacionalidad, fechaNac, sueldo, plazoContrato, fechaContratacion)
+        public Jugador(int dni, string nombre, string apellido, string domicilio, string telefono, string nacionalidad, DateTime fechaNac,string sexo ,double sueldo, int plazoContrato, DateTime fechaContratacion, int dorsal, string posicion, string piernaHabil ) : base(dni, nombre, apellido, domicilio, telefono, nacionalidad, fechaNac, sexo,sueldo, plazoContrato, fechaContratacion)
         {
             this._dorsal = dorsal;
             this._posicion = posicion;

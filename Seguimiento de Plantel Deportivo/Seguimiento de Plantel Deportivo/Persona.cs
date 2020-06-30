@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace Seguimiento_de_Plantel_Deportivo
@@ -16,6 +17,7 @@ namespace Seguimiento_de_Plantel_Deportivo
         protected string _telefono;
         protected string _nacionalidad;
         protected DateTime _fechaNac;
+        protected string _Sexo;
         protected double _sueldo;
         protected int _plazoContrato;
         protected DateTime _fechaContratacion;
@@ -36,7 +38,9 @@ namespace Seguimiento_de_Plantel_Deportivo
         public string getNacionalidad()
         { return _nacionalidad; }
         public DateTime getFechaNac()
-        { return _fechaNac; }      
+        { return _fechaNac; }
+        public string getSexo()
+        { return _Sexo; }
         public double getSueldo()
         { return _sueldo; }
         public int getPlazoContrato()
@@ -66,6 +70,10 @@ namespace Seguimiento_de_Plantel_Deportivo
             if (valor < DateTime.Today)
             { this._fechaNac = valor; }
         }
+        public void setSexo(string valor)
+        {
+            this._Sexo = valor;
+        }
         public void setSueldo(double valor)//El sueldo debe ser mayor a 0
         {
             if (valor > 0)
@@ -86,7 +94,7 @@ namespace Seguimiento_de_Plantel_Deportivo
         #endregion
         #region contructores
       
-        public Persona(int dni, string nombre, string apellido, string domicilio, string telefono,string nacionalidad, DateTime fechaNac, double sueldo,int plazoContrato, DateTime fechaContratacion)
+        public Persona(int dni, string nombre, string apellido, string domicilio, string telefono,string nacionalidad, DateTime fechaNac, string sexo,double sueldo,int plazoContrato, DateTime fechaContratacion)
         {
             this._dni = dni;
             this._nombre = nombre;
@@ -95,6 +103,7 @@ namespace Seguimiento_de_Plantel_Deportivo
             this._telefono = telefono;
             this._nacionalidad = nacionalidad;
             this._fechaNac = fechaNac;
+            this._Sexo = sexo;
             this._sueldo = sueldo;
             this._plazoContrato = plazoContrato;
             this._fechaContratacion = fechaContratacion;
@@ -108,6 +117,7 @@ namespace Seguimiento_de_Plantel_Deportivo
             this._telefono = "";
             this._nacionalidad = "";
             this._fechaNac = DateTime.Today;
+            this._Sexo = "";
             this._sueldo = 0;
             this._plazoContrato = 1;
             this._fechaContratacion = DateTime.Today;

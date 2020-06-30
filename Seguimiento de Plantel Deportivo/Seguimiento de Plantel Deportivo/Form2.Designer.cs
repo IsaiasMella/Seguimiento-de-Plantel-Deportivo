@@ -48,11 +48,11 @@
             this.RBMasculino = new System.Windows.Forms.RadioButton();
             this.RBFemenino = new System.Windows.Forms.RadioButton();
             this.DTPFechaDeNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GBProfesion = new System.Windows.Forms.GroupBox();
             this.RBJugador = new System.Windows.Forms.RadioButton();
             this.RBCuerpoTecnico = new System.Windows.Forms.RadioButton();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.GBJugador = new System.Windows.Forms.GroupBox();
+            this.GBCuerpoTecnico = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.TCargo = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -66,9 +66,9 @@
             this.label8 = new System.Windows.Forms.Label();
             this.BContrato = new System.Windows.Forms.Button();
             this.GBSexo.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
+            this.GBProfesion.SuspendLayout();
+            this.GBJugador.SuspendLayout();
+            this.GBCuerpoTecnico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDDorsal)).BeginInit();
             this.SuspendLayout();
             // 
@@ -147,6 +147,7 @@
             this.BGuardar.TabIndex = 3;
             this.BGuardar.Text = "Guardar";
             this.BGuardar.UseVisualStyleBackColor = true;
+            this.BGuardar.Click += new System.EventHandler(this.BGuardar_Click);
             // 
             // TDomicilio
             // 
@@ -210,7 +211,6 @@
             // 
             this.GBSexo.Controls.Add(this.RBMasculino);
             this.GBSexo.Controls.Add(this.RBFemenino);
-            this.GBSexo.Enabled = false;
             this.GBSexo.Location = new System.Drawing.Point(271, 113);
             this.GBSexo.Name = "GBSexo";
             this.GBSexo.Size = new System.Drawing.Size(200, 69);
@@ -248,16 +248,16 @@
             this.DTPFechaDeNacimiento.Size = new System.Drawing.Size(200, 20);
             this.DTPFechaDeNacimiento.TabIndex = 6;
             // 
-            // groupBox1
+            // GBProfesion
             // 
-            this.groupBox1.Controls.Add(this.RBJugador);
-            this.groupBox1.Controls.Add(this.RBCuerpoTecnico);
-            this.groupBox1.Location = new System.Drawing.Point(271, 34);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 73);
-            this.groupBox1.TabIndex = 7;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Profesion";
+            this.GBProfesion.Controls.Add(this.RBJugador);
+            this.GBProfesion.Controls.Add(this.RBCuerpoTecnico);
+            this.GBProfesion.Location = new System.Drawing.Point(271, 34);
+            this.GBProfesion.Name = "GBProfesion";
+            this.GBProfesion.Size = new System.Drawing.Size(200, 73);
+            this.GBProfesion.TabIndex = 7;
+            this.GBProfesion.TabStop = false;
+            this.GBProfesion.Text = "Profesion";
             // 
             // RBJugador
             // 
@@ -281,37 +281,36 @@
             this.RBCuerpoTecnico.Text = "Cuerpo Técnico";
             this.RBCuerpoTecnico.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // GBJugador
             // 
-            this.groupBox2.Controls.Add(this.groupBox3);
-            this.groupBox2.Controls.Add(this.CBPiernaHabil);
-            this.groupBox2.Controls.Add(this.CBPosicion);
-            this.groupBox2.Controls.Add(this.NUDDorsal);
-            this.groupBox2.Controls.Add(this.label11);
-            this.groupBox2.Controls.Add(this.label10);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Location = new System.Drawing.Point(504, 47);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(238, 125);
-            this.groupBox2.TabIndex = 8;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Jugador";
-            this.groupBox2.Visible = false;
+            this.GBJugador.Controls.Add(this.CBPiernaHabil);
+            this.GBJugador.Controls.Add(this.CBPosicion);
+            this.GBJugador.Controls.Add(this.NUDDorsal);
+            this.GBJugador.Controls.Add(this.label11);
+            this.GBJugador.Controls.Add(this.label10);
+            this.GBJugador.Controls.Add(this.label9);
+            this.GBJugador.Controls.Add(this.label8);
+            this.GBJugador.Location = new System.Drawing.Point(504, 47);
+            this.GBJugador.Name = "GBJugador";
+            this.GBJugador.Size = new System.Drawing.Size(238, 125);
+            this.GBJugador.TabIndex = 8;
+            this.GBJugador.TabStop = false;
+            this.GBJugador.Text = "Jugador";
+            this.GBJugador.Visible = false;
             // 
-            // groupBox3
+            // GBCuerpoTecnico
             // 
-            this.groupBox3.Controls.Add(this.textBox1);
-            this.groupBox3.Controls.Add(this.TCargo);
-            this.groupBox3.Controls.Add(this.label13);
-            this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Location = new System.Drawing.Point(0, 5);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(238, 122);
-            this.groupBox3.TabIndex = 8;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Cuerpo Técnico";
-            this.groupBox3.Visible = false;
+            this.GBCuerpoTecnico.Controls.Add(this.textBox1);
+            this.GBCuerpoTecnico.Controls.Add(this.TCargo);
+            this.GBCuerpoTecnico.Controls.Add(this.label13);
+            this.GBCuerpoTecnico.Controls.Add(this.label12);
+            this.GBCuerpoTecnico.Location = new System.Drawing.Point(779, 56);
+            this.GBCuerpoTecnico.Name = "GBCuerpoTecnico";
+            this.GBCuerpoTecnico.Size = new System.Drawing.Size(238, 122);
+            this.GBCuerpoTecnico.TabIndex = 8;
+            this.GBCuerpoTecnico.TabStop = false;
+            this.GBCuerpoTecnico.Text = "Cuerpo Técnico";
+            this.GBCuerpoTecnico.Visible = false;
             // 
             // textBox1
             // 
@@ -435,14 +434,17 @@
             this.BContrato.TabIndex = 3;
             this.BContrato.Text = "Contrato";
             this.BContrato.UseVisualStyleBackColor = true;
+            this.BContrato.Click += new System.EventHandler(this.BContrato_Click);
             // 
             // FPersonal
             // 
+            this.AcceptButton = this.BGuardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(812, 287);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.ClientSize = new System.Drawing.Size(1142, 287);
+            this.Controls.Add(this.GBCuerpoTecnico);
+            this.Controls.Add(this.GBJugador);
+            this.Controls.Add(this.GBProfesion);
             this.Controls.Add(this.DTPFechaDeNacimiento);
             this.Controls.Add(this.GBSexo);
             this.Controls.Add(this.TNacionalidad);
@@ -466,12 +468,12 @@
             this.Text = "Personal";
             this.GBSexo.ResumeLayout(false);
             this.GBSexo.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
+            this.GBProfesion.ResumeLayout(false);
+            this.GBProfesion.PerformLayout();
+            this.GBJugador.ResumeLayout(false);
+            this.GBJugador.PerformLayout();
+            this.GBCuerpoTecnico.ResumeLayout(false);
+            this.GBCuerpoTecnico.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDDorsal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -500,11 +502,11 @@
         private System.Windows.Forms.RadioButton RBMasculino;
         private System.Windows.Forms.RadioButton RBFemenino;
         private System.Windows.Forms.DateTimePicker DTPFechaDeNacimiento;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GBProfesion;
         private System.Windows.Forms.RadioButton RBJugador;
         private System.Windows.Forms.RadioButton RBCuerpoTecnico;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.GroupBox GBJugador;
+        private System.Windows.Forms.GroupBox GBCuerpoTecnico;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox TCargo;
         private System.Windows.Forms.Label label13;
