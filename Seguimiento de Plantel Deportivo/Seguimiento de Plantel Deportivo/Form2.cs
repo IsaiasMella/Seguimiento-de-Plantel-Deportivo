@@ -25,46 +25,46 @@ namespace Seguimiento_de_Plantel_Deportivo
             string sexo;            
             if (!MTBdni.MaskFull)
             {
-                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MTBdni.Focus();
             }
             else if (TNombre.Text == "")
             {
-                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TNombre.Focus();
             }
             else if (TApellido.Text == "")
             {
-                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TApellido.Focus();
             }
             else if (TNacionalidad.Text == "")
             {
-                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TNacionalidad.Focus();
             }
             if (!MTBTelefono.MaskFull)
             {
-                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MTBTelefono.Focus();
             }
             else if (TDomicilio.Text == "")
             {
-                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TDomicilio.Focus();
             }
             else if (DTPFechaDeNacimiento.Value >= DateTime.Today)
             {
-                MessageBox.Show("Ingrese una Fecha valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ingrese una Fecha valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DTPFechaDeNacimiento.Focus();
             }
             else if ((!RBJugador.Checked) && (!RBCuerpoTecnico.Checked))
             {
-                MessageBox.Show("Indicar la profesión", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Indicar la profesión", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else if ((!RBMasculino.Checked) && (!RBFemenino.Checked))
             {
-                MessageBox.Show("Indicar el Sexo de la Persona", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Indicar el Sexo de la Persona", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             if (RBMasculino.Checked)
             {

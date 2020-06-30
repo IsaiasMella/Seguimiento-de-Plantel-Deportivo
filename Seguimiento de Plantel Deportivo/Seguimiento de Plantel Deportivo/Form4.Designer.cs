@@ -29,10 +29,17 @@
         private void InitializeComponent()
         {
             this.GBCargar = new System.Windows.Forms.GroupBox();
+            this.MTBTiempoEstimadoDeLesion = new System.Windows.Forms.MaskedTextBox();
+            this.MTBdniCarga = new System.Windows.Forms.MaskedTextBox();
+            this.TNombre = new System.Windows.Forms.TextBox();
             this.DTPFechaDeInicio = new System.Windows.Forms.DateTimePicker();
+            this.TApellido = new System.Windows.Forms.TextBox();
             this.Tlesion = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
             this.BCargar = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -40,15 +47,8 @@
             this.LBLesion = new System.Windows.Forms.ListBox();
             this.MTBdniBusquedaDeLesion = new System.Windows.Forms.MaskedTextBox();
             this.BBuscarLesion = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.TApellido = new System.Windows.Forms.TextBox();
-            this.TNombre = new System.Windows.Forms.TextBox();
-            this.MTBdniCarga = new System.Windows.Forms.MaskedTextBox();
             this.LJugador = new System.Windows.Forms.Label();
-            this.MTBTiempoEstimadoDeLesion = new System.Windows.Forms.MaskedTextBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.GBCargar.SuspendLayout();
             this.GBLesion.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +76,29 @@
             this.GBCargar.TabStop = false;
             this.GBCargar.Text = "Cargar";
             // 
+            // MTBTiempoEstimadoDeLesion
+            // 
+            this.MTBTiempoEstimadoDeLesion.Location = new System.Drawing.Point(130, 160);
+            this.MTBTiempoEstimadoDeLesion.Mask = "00009";
+            this.MTBTiempoEstimadoDeLesion.Name = "MTBTiempoEstimadoDeLesion";
+            this.MTBTiempoEstimadoDeLesion.Size = new System.Drawing.Size(108, 20);
+            this.MTBTiempoEstimadoDeLesion.TabIndex = 3;
+            // 
+            // MTBdniCarga
+            // 
+            this.MTBdniCarga.Location = new System.Drawing.Point(130, 19);
+            this.MTBdniCarga.Mask = "99.999.999";
+            this.MTBdniCarga.Name = "MTBdniCarga";
+            this.MTBdniCarga.Size = new System.Drawing.Size(108, 20);
+            this.MTBdniCarga.TabIndex = 3;
+            // 
+            // TNombre
+            // 
+            this.TNombre.Location = new System.Drawing.Point(130, 48);
+            this.TNombre.Name = "TNombre";
+            this.TNombre.Size = new System.Drawing.Size(108, 20);
+            this.TNombre.TabIndex = 2;
+            // 
             // DTPFechaDeInicio
             // 
             this.DTPFechaDeInicio.Location = new System.Drawing.Point(130, 133);
@@ -83,12 +106,29 @@
             this.DTPFechaDeInicio.Size = new System.Drawing.Size(108, 20);
             this.DTPFechaDeInicio.TabIndex = 3;
             // 
+            // TApellido
+            // 
+            this.TApellido.Location = new System.Drawing.Point(130, 76);
+            this.TApellido.Name = "TApellido";
+            this.TApellido.Size = new System.Drawing.Size(108, 20);
+            this.TApellido.TabIndex = 2;
+            // 
             // Tlesion
             // 
+            this.Tlesion.Cursor = System.Windows.Forms.Cursors.Default;
             this.Tlesion.Location = new System.Drawing.Point(130, 106);
             this.Tlesion.Name = "Tlesion";
             this.Tlesion.Size = new System.Drawing.Size(108, 20);
             this.Tlesion.TabIndex = 2;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(17, 55);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(44, 13);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "Nombre";
             // 
             // BCargar
             // 
@@ -98,6 +138,16 @@
             this.BCargar.TabIndex = 1;
             this.BCargar.Text = "Cargar";
             this.BCargar.UseVisualStyleBackColor = true;
+            this.BCargar.Click += new System.EventHandler(this.BCargar_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(17, 83);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(44, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "Apellido";
             // 
             // label5
             // 
@@ -107,6 +157,15 @@
             this.label5.Size = new System.Drawing.Size(35, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "label1";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(17, 26);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(26, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "DNI";
             // 
             // label3
             // 
@@ -174,64 +233,7 @@
             this.BBuscarLesion.TabIndex = 1;
             this.BBuscarLesion.Text = "Buscar";
             this.BBuscarLesion.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 37);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(26, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "DNI";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(17, 26);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(26, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "DNI";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(17, 55);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(44, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "Apellido";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(17, 83);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(44, 13);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "Nombre";
-            // 
-            // TApellido
-            // 
-            this.TApellido.Location = new System.Drawing.Point(130, 48);
-            this.TApellido.Name = "TApellido";
-            this.TApellido.Size = new System.Drawing.Size(108, 20);
-            this.TApellido.TabIndex = 2;
-            // 
-            // TNombre
-            // 
-            this.TNombre.Location = new System.Drawing.Point(130, 76);
-            this.TNombre.Name = "TNombre";
-            this.TNombre.Size = new System.Drawing.Size(108, 20);
-            this.TNombre.TabIndex = 2;
-            // 
-            // MTBdniCarga
-            // 
-            this.MTBdniCarga.Location = new System.Drawing.Point(130, 19);
-            this.MTBdniCarga.Mask = "99.999.999";
-            this.MTBdniCarga.Name = "MTBdniCarga";
-            this.MTBdniCarga.Size = new System.Drawing.Size(108, 20);
-            this.MTBdniCarga.TabIndex = 3;
+            this.BBuscarLesion.Click += new System.EventHandler(this.BBuscarLesion_Click);
             // 
             // LJugador
             // 
@@ -243,13 +245,14 @@
             this.LJugador.Text = "Jugador";
             this.LJugador.Visible = false;
             // 
-            // MTBTiempoEstimadoDeLesion
+            // label4
             // 
-            this.MTBTiempoEstimadoDeLesion.Location = new System.Drawing.Point(130, 160);
-            this.MTBTiempoEstimadoDeLesion.Mask = "00009";
-            this.MTBTiempoEstimadoDeLesion.Name = "MTBTiempoEstimadoDeLesion";
-            this.MTBTiempoEstimadoDeLesion.Size = new System.Drawing.Size(108, 20);
-            this.MTBTiempoEstimadoDeLesion.TabIndex = 3;
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(30, 37);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(26, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "DNI";
             // 
             // FLesion
             // 
