@@ -52,11 +52,6 @@
             this.RBJugador = new System.Windows.Forms.RadioButton();
             this.RBCuerpoTecnico = new System.Windows.Forms.RadioButton();
             this.GBJugador = new System.Windows.Forms.GroupBox();
-            this.GBCuerpoTecnico = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.TCargo = new System.Windows.Forms.TextBox();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.CBPiernaHabil = new System.Windows.Forms.ComboBox();
             this.CBPosicion = new System.Windows.Forms.ComboBox();
             this.NUDDorsal = new System.Windows.Forms.NumericUpDown();
@@ -64,12 +59,17 @@
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.GBCuerpoTecnico = new System.Windows.Forms.GroupBox();
+            this.TEspecialidad = new System.Windows.Forms.TextBox();
+            this.TCargo = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.BContrato = new System.Windows.Forms.Button();
             this.GBSexo.SuspendLayout();
             this.GBProfesion.SuspendLayout();
             this.GBJugador.SuspendLayout();
-            this.GBCuerpoTecnico.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NUDDorsal)).BeginInit();
+            this.GBCuerpoTecnico.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -129,6 +129,7 @@
             this.BBuscar.TabIndex = 3;
             this.BBuscar.Text = "Buscar";
             this.BBuscar.UseVisualStyleBackColor = true;
+            this.BBuscar.Click += new System.EventHandler(this.BBuscar_Click);
             // 
             // BEliminar
             // 
@@ -211,7 +212,7 @@
             // 
             this.GBSexo.Controls.Add(this.RBMasculino);
             this.GBSexo.Controls.Add(this.RBFemenino);
-            this.GBSexo.Location = new System.Drawing.Point(271, 113);
+            this.GBSexo.Location = new System.Drawing.Point(276, 38);
             this.GBSexo.Name = "GBSexo";
             this.GBSexo.Size = new System.Drawing.Size(200, 69);
             this.GBSexo.TabIndex = 5;
@@ -252,7 +253,7 @@
             // 
             this.GBProfesion.Controls.Add(this.RBJugador);
             this.GBProfesion.Controls.Add(this.RBCuerpoTecnico);
-            this.GBProfesion.Location = new System.Drawing.Point(271, 34);
+            this.GBProfesion.Location = new System.Drawing.Point(276, 118);
             this.GBProfesion.Name = "GBProfesion";
             this.GBProfesion.Size = new System.Drawing.Size(200, 73);
             this.GBProfesion.TabIndex = 7;
@@ -269,6 +270,7 @@
             this.RBJugador.TabStop = true;
             this.RBJugador.Text = "Jugador";
             this.RBJugador.UseVisualStyleBackColor = true;
+            this.RBJugador.CheckedChanged += new System.EventHandler(this.RBJugador_CheckedChanged);
             // 
             // RBCuerpoTecnico
             // 
@@ -280,6 +282,7 @@
             this.RBCuerpoTecnico.TabStop = true;
             this.RBCuerpoTecnico.Text = "Cuerpo Técnico";
             this.RBCuerpoTecnico.UseVisualStyleBackColor = true;
+            this.RBCuerpoTecnico.CheckedChanged += new System.EventHandler(this.RBCuerpoTecnico_CheckedChanged);
             // 
             // GBJugador
             // 
@@ -290,59 +293,13 @@
             this.GBJugador.Controls.Add(this.label10);
             this.GBJugador.Controls.Add(this.label9);
             this.GBJugador.Controls.Add(this.label8);
-            this.GBJugador.Location = new System.Drawing.Point(504, 47);
+            this.GBJugador.Location = new System.Drawing.Point(501, 53);
             this.GBJugador.Name = "GBJugador";
             this.GBJugador.Size = new System.Drawing.Size(238, 125);
             this.GBJugador.TabIndex = 8;
             this.GBJugador.TabStop = false;
             this.GBJugador.Text = "Jugador";
             this.GBJugador.Visible = false;
-            // 
-            // GBCuerpoTecnico
-            // 
-            this.GBCuerpoTecnico.Controls.Add(this.textBox1);
-            this.GBCuerpoTecnico.Controls.Add(this.TCargo);
-            this.GBCuerpoTecnico.Controls.Add(this.label13);
-            this.GBCuerpoTecnico.Controls.Add(this.label12);
-            this.GBCuerpoTecnico.Location = new System.Drawing.Point(779, 56);
-            this.GBCuerpoTecnico.Name = "GBCuerpoTecnico";
-            this.GBCuerpoTecnico.Size = new System.Drawing.Size(238, 122);
-            this.GBCuerpoTecnico.TabIndex = 8;
-            this.GBCuerpoTecnico.TabStop = false;
-            this.GBCuerpoTecnico.Text = "Cuerpo Técnico";
-            this.GBCuerpoTecnico.Visible = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(92, 61);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
-            // 
-            // TCargo
-            // 
-            this.TCargo.Location = new System.Drawing.Point(92, 26);
-            this.TCargo.Name = "TCargo";
-            this.TCargo.Size = new System.Drawing.Size(100, 20);
-            this.TCargo.TabIndex = 1;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(19, 64);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(67, 13);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Especialidad";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(20, 29);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(35, 13);
-            this.label12.TabIndex = 0;
-            this.label12.Text = "Cargo";
             // 
             // CBPiernaHabil
             // 
@@ -426,6 +383,52 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Dorsal";
             // 
+            // GBCuerpoTecnico
+            // 
+            this.GBCuerpoTecnico.Controls.Add(this.TEspecialidad);
+            this.GBCuerpoTecnico.Controls.Add(this.TCargo);
+            this.GBCuerpoTecnico.Controls.Add(this.label13);
+            this.GBCuerpoTecnico.Controls.Add(this.label12);
+            this.GBCuerpoTecnico.Location = new System.Drawing.Point(501, 58);
+            this.GBCuerpoTecnico.Name = "GBCuerpoTecnico";
+            this.GBCuerpoTecnico.Size = new System.Drawing.Size(238, 122);
+            this.GBCuerpoTecnico.TabIndex = 8;
+            this.GBCuerpoTecnico.TabStop = false;
+            this.GBCuerpoTecnico.Text = "Cuerpo Técnico";
+            this.GBCuerpoTecnico.Visible = false;
+            // 
+            // TEspecialidad
+            // 
+            this.TEspecialidad.Location = new System.Drawing.Point(92, 61);
+            this.TEspecialidad.Name = "TEspecialidad";
+            this.TEspecialidad.Size = new System.Drawing.Size(100, 20);
+            this.TEspecialidad.TabIndex = 1;
+            // 
+            // TCargo
+            // 
+            this.TCargo.Location = new System.Drawing.Point(92, 26);
+            this.TCargo.Name = "TCargo";
+            this.TCargo.Size = new System.Drawing.Size(100, 20);
+            this.TCargo.TabIndex = 1;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(19, 64);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(67, 13);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Especialidad";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(20, 29);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 13);
+            this.label12.TabIndex = 0;
+            this.label12.Text = "Cargo";
+            // 
             // BContrato
             // 
             this.BContrato.Location = new System.Drawing.Point(595, 225);
@@ -441,7 +444,7 @@
             this.AcceptButton = this.BGuardar;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1142, 287);
+            this.ClientSize = new System.Drawing.Size(782, 287);
             this.Controls.Add(this.GBCuerpoTecnico);
             this.Controls.Add(this.GBJugador);
             this.Controls.Add(this.GBProfesion);
@@ -472,9 +475,9 @@
             this.GBProfesion.PerformLayout();
             this.GBJugador.ResumeLayout(false);
             this.GBJugador.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NUDDorsal)).EndInit();
             this.GBCuerpoTecnico.ResumeLayout(false);
             this.GBCuerpoTecnico.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NUDDorsal)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -507,7 +510,7 @@
         private System.Windows.Forms.RadioButton RBCuerpoTecnico;
         private System.Windows.Forms.GroupBox GBJugador;
         private System.Windows.Forms.GroupBox GBCuerpoTecnico;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox TEspecialidad;
         private System.Windows.Forms.TextBox TCargo;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
