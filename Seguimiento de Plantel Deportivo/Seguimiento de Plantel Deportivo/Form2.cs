@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.CSharp.RuntimeBinder;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -54,7 +55,7 @@ namespace Seguimiento_de_Plantel_Deportivo
             }
             else if (DTPFechaDeNacimiento.Value >= DateTime.Today)
             {
-                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ingrese una Fecha valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 DTPFechaDeNacimiento.Focus();
             }
             else if ((!RBJugador.Checked) && (!RBCuerpoTecnico.Checked))
@@ -93,13 +94,7 @@ namespace Seguimiento_de_Plantel_Deportivo
                 //guarda en la lista todo respecto al jugador
                 else
                 {
-
-                    foreach (Jugador nuevo in parListPersona)
-                    {
-                        #region Agregar Nuevos Items a la Lista
-                        //parListPersona.Add(Convert.ToInt32(MTBdni.Text));
-                        #endregion
-                    }
+                    Repetido();          
                 }
             }
             if (RBCuerpoTecnico.Checked == true)
@@ -117,17 +112,37 @@ namespace Seguimiento_de_Plantel_Deportivo
                 //guarda en la lista todo respecto al Cuerpo Tecnico
                 else
                 {
-
-                    foreach (Cuerpo_Tecnico nuevo in parListPersona)
-                    {
-                        #region Agregar Nuevos Items a la Lista
-                        //parListPersona.Add(Convert.ToInt32(MTBdni.Text));
-                        #endregion
-                    }
+                    Repetido();
                 }
             }            
         }
-       
+
+        private void Carga()
+        {
+          
+            foreach (Jugador nuevo in parListPersona)
+            {
+                #region Agregar Nuevos Items a la Lista
+                //parListPersona.Add(Convert.ToInt32(MTBdni.Text));
+                #endregion
+            }
+            
+        }
+        private void Repetido()
+        {
+            foreach (int Dni in parListPersona.Dni )
+            {
+                if (MTBdni.Text == parListPersona.Dni)
+                {
+                    MessageBox.Show("Dni repetdio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MTBdni.Focus();
+                }
+                else
+                {
+                    Carga();
+                }
+            }
+        }       
         private void BGuardar_Click(object sender, EventArgs e)
         {
             Campos_Completos();
@@ -153,15 +168,46 @@ namespace Seguimiento_de_Plantel_Deportivo
 
         private void BBuscar_Click(object sender, EventArgs e)
         {
-            if (!MTBdni.MaskFull)
+           /* if (!MTBdni.MaskFull)
             {
                 MessageBox.Show("Ingrese DNI para buscar el Empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MTBdni.Focus();
             }
-            if (MTBdni.Text == <NombreDeLaLista>.Dni)
+            else foreach (int _dni in < NombreDeLaLista>.Dni)
             {
+                 {
+                      if (MTBdni.Text == < NombreDeLaLista >.Dni)
+                      {
+                            TNombre.Text = < NombreDeLaLista >.Nombre;
+                            TApellido.Text = < NombreDeLaLista >.Apellido;
+                            TNacionalidad.Text = < NombreDeLaLista >.Nacionalidad;
+                            MTBTelefono.Text = < NombreDeLaLista >.Telefono;
+                            TDomicilio.Text = < NombreDeLaLista >.Telefono;
+                            DTPFechaDeNacimiento.Value = < NombreDeLaLista >.DTPFechaDeNacimiento;
+                            RBMasculino.Checked = < NombreDeLaLista > .SexoMasculino;
+                            RBFemenino.Checked = < NombreDeLaLista > .SexoFemenino;
+                            RBCuerpoTecnico.Checked = < NombreDeLaLista > .CuerpoTecnico;
+                            RBJugador.Checked = < NombreDeLaLista > .Jugador;
+                            if (RBJugador.Checked)
+                            {
+                                NUDDorsal.Value = < NombreDeLaLista > .Dorsal;
+                                CBPosicion.SelectedIndex = < NombreDeLaLista > .Posicion;
+                                CBPiernaHabil.SelectedIndex = < NombreDeLaLista > .PiernaHabil;
+                            }
+                            if (RBCuerpoTecnico.Checked)
+                            {
+                                TCargo.Text = < NombreDeLaLista > .Cargo;
+                                TEspecialidad.Text = < NombreDeLaLista > .Especialidad;
+                            }
+                      }
+                 }
+                
+            }  */          
+        }
+        // Falta hacer boton eliminar
+        private void BEliminar_Click(object sender, EventArgs e)
+        {
 
-            }
         }
     }
 }

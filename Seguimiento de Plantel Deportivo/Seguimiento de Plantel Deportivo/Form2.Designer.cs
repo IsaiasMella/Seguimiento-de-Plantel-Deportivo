@@ -139,6 +139,7 @@
             this.BEliminar.TabIndex = 3;
             this.BEliminar.Text = "Eliminar";
             this.BEliminar.UseVisualStyleBackColor = true;
+            this.BEliminar.Click += new System.EventHandler(this.BEliminar_Click);
             // 
             // BGuardar
             // 

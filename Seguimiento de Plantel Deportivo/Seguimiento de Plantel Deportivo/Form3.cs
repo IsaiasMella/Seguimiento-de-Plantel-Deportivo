@@ -16,5 +16,49 @@ namespace Seguimiento_de_Plantel_Deportivo
         {
             InitializeComponent();
         }
+
+        private void BModificar_Click(object sender, EventArgs e)
+        {
+            if (!MTBDni.MaskFull)
+            {
+                MessageBox.Show("Ingrese DNI", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MTBDni.Focus();
+            }
+            /*else foreach (int _dni in < NombreDeLaLista >.dni)
+            {
+                {
+                    if (MTBDni.Text == < NombreDeLaLista >.Dni)
+                    {
+                       //Guardar en la lista persona
+                       LPersona.Text = < NombreDeLaLista >.Nombre + < NombreDeLaLista >.Apellido;
+                    }
+                    else
+                    {
+                       MessageBox.Show("El DNI no se encuentra en la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                       MTBDni.Clear();
+                       MTBDni.Focus();
+
+                    }
+                }
+
+            }*/
+        }
+
+        private void BConfirmar_Click(object sender, EventArgs e)
+        {
+            if (DTPFechaInicio.Value < DateTime.Today)
+            {
+                MessageBox.Show("Ingrese una fecha de inicio válida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (DTPFechaInicio.Value > DTPFechaFinalizacionContrato_CrearContrato.Value)
+            {
+                MessageBox.Show("Ingrese una fecha de finalización válida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else if (!MTBSueldo.MaskFull)
+            {
+                MessageBox.Show("Ingrese sueldo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MTBSueldo.Focus();
+            }
+        }
     }
 }

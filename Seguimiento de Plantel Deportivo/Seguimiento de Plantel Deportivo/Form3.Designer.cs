@@ -29,19 +29,19 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.MTBDni = new System.Windows.Forms.MaskedTextBox();
             this.BModificar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.BConfirmar = new System.Windows.Forms.Button();
-            this.LPersona = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.DTPFechaInicio = new System.Windows.Forms.DateTimePicker();
-            this.label6 = new System.Windows.Forms.Label();
-            this.MTBSueldo = new System.Windows.Forms.MaskedTextBox();
-            this.DTPFechaFinalizacionContrato_CrearContrato = new System.Windows.Forms.DateTimePicker();
             this.LDuracionDeContrato = new System.Windows.Forms.Label();
+            this.BConfirmar = new System.Windows.Forms.Button();
+            this.DTPFechaInicio = new System.Windows.Forms.DateTimePicker();
+            this.DTPFechaFinalizacionContrato_CrearContrato = new System.Windows.Forms.DateTimePicker();
+            this.LPersona = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.MTBSueldo = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -55,13 +55,13 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "DNI:";
             // 
-            // maskedTextBox1
+            // MTBDni
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(130, 27);
-            this.maskedTextBox1.Mask = "99.999.999";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(100, 20);
-            this.maskedTextBox1.TabIndex = 1;
+            this.MTBDni.Location = new System.Drawing.Point(130, 27);
+            this.MTBDni.Mask = "99.999.999";
+            this.MTBDni.Name = "MTBDni";
+            this.MTBDni.Size = new System.Drawing.Size(100, 20);
+            this.MTBDni.TabIndex = 1;
             // 
             // BModificar
             // 
@@ -71,12 +71,13 @@
             this.BModificar.TabIndex = 3;
             this.BModificar.Text = "Modificar";
             this.BModificar.UseVisualStyleBackColor = true;
+            this.BModificar.Click += new System.EventHandler(this.BModificar_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.BModificar);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.maskedTextBox1);
+            this.groupBox1.Controls.Add(this.MTBDni);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(350, 107);
@@ -103,6 +104,15 @@
             this.groupBox2.Text = "Crear Contrato";
             this.groupBox2.Visible = false;
             // 
+            // LDuracionDeContrato
+            // 
+            this.LDuracionDeContrato.AutoSize = true;
+            this.LDuracionDeContrato.Location = new System.Drawing.Point(80, 158);
+            this.LDuracionDeContrato.Name = "LDuracionDeContrato";
+            this.LDuracionDeContrato.Size = new System.Drawing.Size(111, 13);
+            this.LDuracionDeContrato.TabIndex = 4;
+            this.LDuracionDeContrato.Text = "Duración de Contrato:";
+            // 
             // BConfirmar
             // 
             this.BConfirmar.Location = new System.Drawing.Point(115, 189);
@@ -111,6 +121,21 @@
             this.BConfirmar.TabIndex = 3;
             this.BConfirmar.Text = "Confirmar";
             this.BConfirmar.UseVisualStyleBackColor = true;
+            this.BConfirmar.Click += new System.EventHandler(this.BConfirmar_Click);
+            // 
+            // DTPFechaInicio
+            // 
+            this.DTPFechaInicio.Location = new System.Drawing.Point(115, 56);
+            this.DTPFechaInicio.Name = "DTPFechaInicio";
+            this.DTPFechaInicio.Size = new System.Drawing.Size(200, 20);
+            this.DTPFechaInicio.TabIndex = 2;
+            // 
+            // DTPFechaFinalizacionContrato_CrearContrato
+            // 
+            this.DTPFechaFinalizacionContrato_CrearContrato.Location = new System.Drawing.Point(115, 88);
+            this.DTPFechaFinalizacionContrato_CrearContrato.Name = "DTPFechaFinalizacionContrato_CrearContrato";
+            this.DTPFechaFinalizacionContrato_CrearContrato.Size = new System.Drawing.Size(200, 20);
+            this.DTPFechaFinalizacionContrato_CrearContrato.TabIndex = 2;
             // 
             // LPersona
             // 
@@ -121,15 +146,6 @@
             this.LPersona.TabIndex = 0;
             this.LPersona.Text = "Persona";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(11, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Fecha Finalización:\r\n";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -138,13 +154,6 @@
             this.label5.Size = new System.Drawing.Size(68, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "Fecha Inicio:";
-            // 
-            // DTPFechaInicio
-            // 
-            this.DTPFechaInicio.Location = new System.Drawing.Point(115, 56);
-            this.DTPFechaInicio.Name = "DTPFechaInicio";
-            this.DTPFechaInicio.Size = new System.Drawing.Size(200, 20);
-            this.DTPFechaInicio.TabIndex = 2;
             // 
             // label6
             // 
@@ -155,6 +164,15 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "Sueldo:";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(11, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(98, 13);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Fecha Finalización:\r\n";
+            // 
             // MTBSueldo
             // 
             this.MTBSueldo.Location = new System.Drawing.Point(115, 122);
@@ -162,22 +180,6 @@
             this.MTBSueldo.Name = "MTBSueldo";
             this.MTBSueldo.Size = new System.Drawing.Size(100, 20);
             this.MTBSueldo.TabIndex = 1;
-            // 
-            // DTPFechaFinalizacionContrato_CrearContrato
-            // 
-            this.DTPFechaFinalizacionContrato_CrearContrato.Location = new System.Drawing.Point(115, 88);
-            this.DTPFechaFinalizacionContrato_CrearContrato.Name = "DTPFechaFinalizacionContrato_CrearContrato";
-            this.DTPFechaFinalizacionContrato_CrearContrato.Size = new System.Drawing.Size(200, 20);
-            this.DTPFechaFinalizacionContrato_CrearContrato.TabIndex = 2;
-            // 
-            // LDuracionDeContrato
-            // 
-            this.LDuracionDeContrato.AutoSize = true;
-            this.LDuracionDeContrato.Location = new System.Drawing.Point(80, 158);
-            this.LDuracionDeContrato.Name = "LDuracionDeContrato";
-            this.LDuracionDeContrato.Size = new System.Drawing.Size(111, 13);
-            this.LDuracionDeContrato.TabIndex = 4;
-            this.LDuracionDeContrato.Text = "Duración de Contrato:";
             // 
             // FContratos
             // 
@@ -199,7 +201,7 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox MTBDni;
         private System.Windows.Forms.Button BModificar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
