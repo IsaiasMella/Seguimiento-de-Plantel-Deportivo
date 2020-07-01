@@ -33,13 +33,30 @@ namespace Seguimiento_de_Plantel_Deportivo
                 MessageBox.Show("Ingrese sueldo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MTBSueldo.Focus();
             }
+            else
+            {
+                foreach (Persona unaPersona in parListPersona)
+                {
+
+                    if (MTBDni.Text == unaPersona.getDni())
+                    {
+                        unaPersona.setFechaContratacion(DTPFechaInicio.Value);
+                        unaPersona.setPlazoContrato(Duracion());
+                        unaPersona.setSueldo(Convert.ToDouble(MTBSueldo.Text));
+
+                    }
+                }
+                MessageBox.Show("La lesion ya fue cargada", "Contrato", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
         }
 
         private int Duracion()
         {
             int Duracion_contrato;
-            Duracion_contrato = Convert.ToInt32(DTPFechaFinalizacionContrato_CrearContrato.Value - DTPFechaInicio.Value);
-            return Duracion_contrato;
+            TimeSpan Dura = DTPFechaFinalizacionContrato_CrearContrato.Value.Date - DTPFechaInicio.Value.Date;
+
+            return Duracion_contrato = Dura.Days;
         }
 
         private void BModificar_Click(object sender, EventArgs e)
@@ -48,31 +65,36 @@ namespace Seguimiento_de_Plantel_Deportivo
             {
                 MessageBox.Show("Ingrese DNI", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MTBDni.Focus();
+
             }
-            GBCrearContratos.Visible = true;
-            /*else foreach (int _dni in < NombreDeLaLista >.dni)
+
+            else
             {
+                GBCrearContratos.Visible = true;
+                foreach (Persona unaPersona in parListPersona)
+
                 {
-                    if (MTBDni.Text == < NombreDeLaLista >.Dni)
+                    if (MTBDni.Text == unaPersona.getDni())
                     {
-                       //Guardar en la lista persona
-                       LPersona.Text = < NombreDeLaLista >.Nombre + < NombreDeLaLista >.Apellido;
+                        //Guardar en la lista persona
+                        LPersona.Text = unaPersona.getNombre() + " " + unaPersona.getApellido();
+
                     }
                     else
                     {
-                       MessageBox.Show("El DNI no se encuentra en la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                       MTBDni.Clear();
-                       MTBDni.Focus();
+                        MessageBox.Show("El DNI no se encuentra en la lista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MTBDni.Clear();
+                        MTBDni.Focus();
 
                     }
                 }
 
-            }*/
+            }
         }
         private void BConfirmar_Click(object sender, EventArgs e)
         {
             CamposCompletosConfirmar();
-            LDuracionDeContrato.Text = "Duración de contrato: " + Convert.ToString(Duracion()) + " años";
+            LDuracionDeContrato.Text = "Duración de contrato: " + Convert.ToString(Duracion()) + " dias";
         }
     }
 }

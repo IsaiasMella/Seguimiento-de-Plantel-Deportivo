@@ -88,13 +88,12 @@ namespace Seguimiento_de_Plantel_Deportivo
         }
         public void setFechaContratacion(DateTime valor)//La fecha de contratacion tiene que ser anterior o igual al dia en curso
         {
-            if (valor <= DateTime.Today)
-            { this._fechaContratacion = valor; }
+            this._fechaContratacion = valor;
         }
-        #endregion
-        #region contructores
+            #endregion
+            #region contructores
 
-        public Persona(string dni, string nombre, string apellido, string domicilio, string telefono, string nacionalidad, DateTime fechaNac, string sexo)
+            public Persona(string dni, string nombre, string apellido, string domicilio, string telefono, string nacionalidad, DateTime fechaNac, string sexo)
         {
             this._dni = dni;
             this._nombre = nombre;

@@ -17,7 +17,7 @@ namespace Seguimiento_de_Plantel_Deportivo
         public FSeguimientoDePlantelDepo()
         {
             InitializeComponent();
-            Bitmap img = new Bitmap(Application.StartupPath + @"\img\FondoPrincipal.jpg");
+            Bitmap img = new Bitmap(Application.StartupPath + @"\img\FondoParaFormPrincipal.jpg");
             this.BackgroundImage = img;
         }
         #region Apertura de Formularios
@@ -84,17 +84,20 @@ namespace Seguimiento_de_Plantel_Deportivo
             DGVContratos.Rows.Clear();
             foreach (Persona UnaPersona in ListPersona)
             {
+                //Carga todos los contratos
                 if ((CBContratos.SelectedIndex == 0))
                 {
                     int n = DGVContratos.Rows.Add();
                     DGVContratos.Rows[n].Cells[0].Value = UnaPersona.getApellido() + " " + UnaPersona.getNombre();
                     DGVContratos.Rows[n].Cells[1].Value = UnaPersona.getPlazoContrato();
                     DGVContratos.Rows[n].Cells[2].Value = UnaPersona.getFechaContratacion();
-                    DGVContratos.Rows[n].Cells[3].Value = "fecha finalizacion";
+                    DGVContratos.Rows[n].Cells[3].Value = UnaPersona.getFechaContratacion().AddDays(UnaPersona.getPlazoContrato());
+                    DGVContratos.Rows[n].Cells[4].Value = UnaPersona.getSueldo();
 
                     DGVContratos.Visible = true;
 
                 }
+                //Carga contratos de jugadores
                 if ((UnaPersona is Jugador) && (CBContratos.SelectedIndex == 1))
                 {
 
@@ -102,16 +105,19 @@ namespace Seguimiento_de_Plantel_Deportivo
                     DGVContratos.Rows[J].Cells[0].Value = UnaPersona.getApellido() + " " + UnaPersona.getNombre();
                     DGVContratos.Rows[J].Cells[1].Value = UnaPersona.getPlazoContrato();
                     DGVContratos.Rows[J].Cells[2].Value = UnaPersona.getFechaContratacion();
-                    DGVContratos.Rows[J].Cells[3].Value = "fecha finalizacion";
+                    DGVContratos.Rows[J].Cells[3].Value = UnaPersona.getFechaContratacion().AddDays(UnaPersona.getPlazoContrato());
+                    DGVContratos.Rows[J].Cells[4].Value = UnaPersona.getSueldo();
                     DGVContratos.Visible = true;
                 }
+                //Carga contratos de CT
                 if ((UnaPersona is Cuerpo_Tecnico) && (CBContratos.SelectedIndex == 2))
                 {
                     int T = DGVContratos.Rows.Add();
                     DGVContratos.Rows[T].Cells[0].Value = UnaPersona.getApellido() + " " + UnaPersona.getNombre();
                     DGVContratos.Rows[T].Cells[1].Value = UnaPersona.getPlazoContrato();
                     DGVContratos.Rows[T].Cells[2].Value = UnaPersona.getFechaContratacion();
-                    DGVContratos.Rows[T].Cells[3].Value = "fecha finalizacion";
+                    DGVContratos.Rows[T].Cells[3].Value = UnaPersona.getFechaContratacion().AddDays(UnaPersona.getPlazoContrato());
+                    DGVContratos.Rows[T].Cells[4].Value = UnaPersona.getSueldo();
                     DGVContratos.Visible = true;
                 }
             }

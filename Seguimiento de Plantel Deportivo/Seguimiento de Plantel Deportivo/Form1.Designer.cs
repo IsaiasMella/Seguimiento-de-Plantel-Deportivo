@@ -50,8 +50,11 @@
             this.DuracionContrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaFinalizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Sueldo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BBuscarContratos = new System.Windows.Forms.Button();
             this.CBContratos = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -69,12 +72,13 @@
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1452, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1599, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // personalToolStripMenuItem
             // 
+            this.personalToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.personalToolStripMenuItem.Name = "personalToolStripMenuItem";
             this.personalToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.personalToolStripMenuItem.Text = "Personal";
@@ -82,6 +86,7 @@
             // 
             // contratosToolStripMenuItem
             // 
+            this.contratosToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.contratosToolStripMenuItem.Name = "contratosToolStripMenuItem";
             this.contratosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.contratosToolStripMenuItem.Text = "Contratos";
@@ -89,6 +94,7 @@
             // 
             // lesiónToolStripMenuItem
             // 
+            this.lesiónToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.lesiónToolStripMenuItem.Name = "lesiónToolStripMenuItem";
             this.lesiónToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.lesiónToolStripMenuItem.Text = "Lesión";
@@ -96,6 +102,7 @@
             // 
             // salirToolStripMenuItem
             // 
+            this.salirToolStripMenuItem.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
@@ -125,7 +132,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(23, 26);
+            this.label1.Location = new System.Drawing.Point(76, 25);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 3;
@@ -148,7 +155,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(23, 67);
+            this.label2.Location = new System.Drawing.Point(69, 67);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(64, 13);
             this.label2.TabIndex = 3;
@@ -163,6 +170,7 @@
             this.groupBox1.Controls.Add(this.CBPiernaHabil);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 316);
@@ -172,12 +180,14 @@
             // 
             // BBuscarJugador
             // 
+            this.BBuscarJugador.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BBuscarJugador.ForeColor = System.Drawing.SystemColors.ControlText;
             this.BBuscarJugador.Location = new System.Drawing.Point(62, 110);
             this.BBuscarJugador.Name = "BBuscarJugador";
             this.BBuscarJugador.Size = new System.Drawing.Size(75, 23);
             this.BBuscarJugador.TabIndex = 5;
             this.BBuscarJugador.Text = "Buscar";
-            this.BBuscarJugador.UseVisualStyleBackColor = true;
+            this.BBuscarJugador.UseVisualStyleBackColor = false;
             this.BBuscarJugador.Click += new System.EventHandler(this.BBuscarJugador_Click);
             // 
             // groupBox2
@@ -186,21 +196,25 @@
             this.groupBox2.Controls.Add(this.BBuscarLesion);
             this.groupBox2.Controls.Add(this.LBLesiones);
             this.groupBox2.Controls.Add(this.CBLesion);
+            this.groupBox2.Controls.Add(this.label4);
+            this.groupBox2.ForeColor = System.Drawing.SystemColors.HighlightText;
             this.groupBox2.Location = new System.Drawing.Point(218, 27);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(200, 316);
+            this.groupBox2.Size = new System.Drawing.Size(339, 316);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Lesion";
             // 
             // BBuscarLesion
             // 
-            this.BBuscarLesion.Location = new System.Drawing.Point(64, 70);
+            this.BBuscarLesion.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BBuscarLesion.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BBuscarLesion.Location = new System.Drawing.Point(129, 83);
             this.BBuscarLesion.Name = "BBuscarLesion";
             this.BBuscarLesion.Size = new System.Drawing.Size(75, 23);
             this.BBuscarLesion.TabIndex = 5;
             this.BBuscarLesion.Text = "Buscar";
-            this.BBuscarLesion.UseVisualStyleBackColor = true;
+            this.BBuscarLesion.UseVisualStyleBackColor = false;
             this.BBuscarLesion.Click += new System.EventHandler(this.BBuscarLesion_Click);
             // 
             // LBLesiones
@@ -208,7 +222,7 @@
             this.LBLesiones.FormattingEnabled = true;
             this.LBLesiones.Location = new System.Drawing.Point(29, 139);
             this.LBLesiones.Name = "LBLesiones";
-            this.LBLesiones.Size = new System.Drawing.Size(150, 160);
+            this.LBLesiones.Size = new System.Drawing.Size(275, 160);
             this.LBLesiones.TabIndex = 2;
             // 
             // CBLesion
@@ -220,7 +234,7 @@
             "Defensor",
             "Mediocampista",
             "Delantero"});
-            this.CBLesion.Location = new System.Drawing.Point(42, 43);
+            this.CBLesion.Location = new System.Drawing.Point(107, 56);
             this.CBLesion.Name = "CBLesion";
             this.CBLesion.Size = new System.Drawing.Size(121, 21);
             this.CBLesion.TabIndex = 4;
@@ -231,7 +245,9 @@
             this.groupBox3.Controls.Add(this.DGVContratos);
             this.groupBox3.Controls.Add(this.BBuscarContratos);
             this.groupBox3.Controls.Add(this.CBContratos);
-            this.groupBox3.Location = new System.Drawing.Point(424, 27);
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.ForeColor = System.Drawing.SystemColors.HighlightText;
+            this.groupBox3.Location = new System.Drawing.Point(590, 27);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(676, 316);
             this.groupBox3.TabIndex = 5;
@@ -245,10 +261,11 @@
             this.NombrePersona,
             this.DuracionContrato,
             this.FechaInicio,
-            this.FechaFinalizacion});
-            this.DGVContratos.Location = new System.Drawing.Point(42, 162);
+            this.FechaFinalizacion,
+            this.Sueldo});
+            this.DGVContratos.Location = new System.Drawing.Point(21, 139);
             this.DGVContratos.Name = "DGVContratos";
-            this.DGVContratos.Size = new System.Drawing.Size(550, 150);
+            this.DGVContratos.Size = new System.Drawing.Size(621, 160);
             this.DGVContratos.TabIndex = 6;
             this.DGVContratos.Visible = false;
             // 
@@ -272,14 +289,22 @@
             this.FechaFinalizacion.HeaderText = "Fecha de Finalización";
             this.FechaFinalizacion.Name = "FechaFinalizacion";
             // 
+            // Sueldo
+            // 
+            this.Sueldo.HeaderText = "Sueldo";
+            this.Sueldo.Name = "Sueldo";
+            // 
             // BBuscarContratos
             // 
-            this.BBuscarContratos.Location = new System.Drawing.Point(64, 70);
+            this.BBuscarContratos.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.BBuscarContratos.FlatAppearance.BorderColor = System.Drawing.Color.White;
+            this.BBuscarContratos.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.BBuscarContratos.Location = new System.Drawing.Point(307, 83);
             this.BBuscarContratos.Name = "BBuscarContratos";
             this.BBuscarContratos.Size = new System.Drawing.Size(75, 23);
             this.BBuscarContratos.TabIndex = 5;
             this.BBuscarContratos.Text = "Buscar";
-            this.BBuscarContratos.UseVisualStyleBackColor = true;
+            this.BBuscarContratos.UseVisualStyleBackColor = false;
             this.BBuscarContratos.Click += new System.EventHandler(this.BBuscarContratos_Click);
             // 
             // CBContratos
@@ -289,17 +314,35 @@
             "Todos",
             "Jugadores",
             "Cuerpo Técnico"});
-            this.CBContratos.Location = new System.Drawing.Point(42, 43);
+            this.CBContratos.Location = new System.Drawing.Point(285, 56);
             this.CBContratos.Name = "CBContratos";
             this.CBContratos.Size = new System.Drawing.Size(121, 21);
             this.CBContratos.TabIndex = 4;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(318, 40);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(51, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Profesión";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(140, 40);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Posicion";
             // 
             // FSeguimientoDePlantelDepo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1452, 356);
+            this.BackColor = System.Drawing.Color.Black;
+            this.ClientSize = new System.Drawing.Size(1599, 471);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -313,7 +356,9 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGVContratos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -346,6 +391,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DuracionContrato;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
         private System.Windows.Forms.DataGridViewTextBoxColumn FechaFinalizacion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Sueldo;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
     }
 }
 

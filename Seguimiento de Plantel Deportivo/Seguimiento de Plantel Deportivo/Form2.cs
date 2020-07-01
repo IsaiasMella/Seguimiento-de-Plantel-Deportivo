@@ -18,7 +18,9 @@ namespace Seguimiento_de_Plantel_Deportivo
 
         public FPersonal()
         {
-            InitializeComponent();           
+            InitializeComponent();
+            Bitmap img = new Bitmap(Application.StartupPath + @"\img\FondoParaForm2.jpg");
+            this.BackgroundImage = img;
         }
         private void Campos_Obligatorios_Completos()
         {
@@ -63,17 +65,17 @@ namespace Seguimiento_de_Plantel_Deportivo
             {              
                 if ((NUDDorsal.Value < 1) && (NUDDorsal.Value > 99))
                 {
-                    MessageBox.Show("Dorsal fuera de Rango", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Dorsal fuera de Rango", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     NUDDorsal.Focus();
                 }
                 else if ((CBPosicion.SelectedIndex < 0) || (CBPosicion.SelectedIndex > 3))
                 {
-                    MessageBox.Show("Seleccione la Posicion del Jugador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Seleccione la Posicion del Jugador", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     CBPosicion.Focus();
                 }
                 else if ((CBPiernaHabil.SelectedIndex < 0) || (CBPiernaHabil.SelectedIndex > 1))
                 {
-                    MessageBox.Show("Seleccione la Pierna Habil", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Seleccione la Pierna Habil", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     CBPiernaHabil.Focus();
                 }                
                 else
@@ -85,12 +87,12 @@ namespace Seguimiento_de_Plantel_Deportivo
             {
                 if (TCargo.Text == "")
                 {
-                    MessageBox.Show("Seleccione el Cargo que ocupa en el Cuerpo Tecnico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Seleccione el Cargo que ocupa en el Cuerpo Tecnico", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     TCargo.Focus();
                 }
                 if (TEspecialidad.Text == "")
                 {
-                    MessageBox.Show("Seleccione la Especialidad ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Seleccione la Especialidad ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     TEspecialidad.Focus();
                 }
                 else
@@ -99,6 +101,7 @@ namespace Seguimiento_de_Plantel_Deportivo
                 }
             }            
         }
+
         private void Campos_Opcionales()
         {
             bool carg;
@@ -115,13 +118,13 @@ namespace Seguimiento_de_Plantel_Deportivo
                 {
                     if (TNacionalidad.Text == "")
                     {
-                        TNacionalidad.Focus();
+                        TNacionalidad.Focus();                        
                     }
-                    if (!MTBTelefono.MaskFull)
+                    else if (!MTBTelefono.MaskFull)
                     {
                         MTBTelefono.Focus();
                     }
-                    if (TDomicilio.Text == "")
+                    else if (TDomicilio.Text == "")
                     {
                         TDomicilio.Focus();
                     }
@@ -143,6 +146,7 @@ namespace Seguimiento_de_Plantel_Deportivo
             TNombre.Clear();
             TApellido.Clear();
         }
+
         private void CargaCuerpo_Tecnico()
         {
             MessageBox.Show("Entro a Carga CuerpoTecnico");
@@ -153,6 +157,7 @@ namespace Seguimiento_de_Plantel_Deportivo
             TNombre.Clear();
             TApellido.Clear();
         }
+
         private void Repetido()
         {
             int i;
@@ -185,7 +190,15 @@ namespace Seguimiento_de_Plantel_Deportivo
                         carg = false;
                     }
                 }
-            }         
+            }  
+            foreach (Jugador UnJugador in parListPersona)
+            {
+                if (UnJugador.getDorsal() == NUDDorsal.Value )
+                {
+                    MessageBox.Show("No se pueden cargar jugadores con el mismo Dorsal", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    carg = false;
+                }
+            }
             if (carg == true)
             {
                 if (RBJugador.Checked == true)
@@ -198,6 +211,7 @@ namespace Seguimiento_de_Plantel_Deportivo
                 }
             }                                            
         }
+
         private void BGuardar_Click(object sender, EventArgs e)
         {
             Campos_Obligatorios_Completos();           
