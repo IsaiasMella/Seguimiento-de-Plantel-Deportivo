@@ -125,12 +125,14 @@ namespace Seguimiento_de_Plantel_Deportivo
             {
                 if (CBLesion.SelectedIndex == 0)
                 {
-                    LBLesiones.Items.Add("El tipo de lesion es: "+ UnJugador.getLesion()+ " ,se lesiono el: "+ UnJugador.getLesion().getFecha_De_Inicio_De_Lesion() + " El tiepo estimado de recuperacion es " + UnJugador.getLesion().getTiempo_Estimado_De_Recuperacion()) ;
+                    // + " ,se lesiono el: " + UnJugador.getLesion().getFecha_De_Inicio_De_Lesion() + " El tiepo estimado de recuperacion es " + UnJugador.getLesion().getTiempo_Estimado_De_Recuperacion()) ;
+                    LBLesiones.Items.Add(UnJugador.getApellido() + " " + UnJugador.getNombre() + UnJugador.getLesion().ToString());
                 }
-                if ((Convert.ToString(CBLesion.SelectedItem )== UnJugador.getPosicion())&& (CBLesion.SelectedIndex > 0))
+                else if ((Convert.ToString(CBLesion.SelectedItem) == UnJugador.getPosicion()) && (CBLesion.SelectedIndex > 0))
                 {
-                    LBLesiones.Items.Add("El tipo de lesion es: " + UnJugador.getLesion() + " ,se lesiono el: " + UnJugador.getLesion().getFecha_De_Inicio_De_Lesion() + " El tiepo estimado de recuperacion es " + UnJugador.getLesion().getTiempo_Estimado_De_Recuperacion());
-                }                
+                    //"El tipo de lesion es: " + UnJugador.getLesion() + " ,se lesiono el: " + UnJugador.getLesion().getFecha_De_Inicio_De_Lesion() + " El tiepo estimado de recuperacion es " + UnJugador.getLesion().getTiempo_Estimado_De_Recuperacion());
+                    LBLesiones.Items.Add(UnJugador.getApellido() + " " + UnJugador.getNombre() + UnJugador.getLesion().ToString());
+                }
             }
         }
     }

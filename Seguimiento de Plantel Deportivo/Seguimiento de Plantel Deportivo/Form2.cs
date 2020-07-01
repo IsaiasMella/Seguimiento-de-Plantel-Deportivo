@@ -37,9 +37,7 @@ namespace Seguimiento_de_Plantel_Deportivo
             {
                 MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TApellido.Focus();
-            }
-            //a-lsdfjas-ldknas-dkas-ldnasdlknasdln
-            //MessageBox.Show("Hay campos vacios \n¿Desea continuar?, "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+            }            
             else if (DTPFechaDeNacimiento.Value >= DateTime.Today)
             {
                 MessageBox.Show("Ingrese una Fecha valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -80,8 +78,7 @@ namespace Seguimiento_de_Plantel_Deportivo
                 }                
                 else
                 {
-                    Campos_Opcionales();
-                    Repetido();          
+                    Campos_Opcionales();                     
                 }
             }
             if (RBCuerpoTecnico.Checked == true)
@@ -98,14 +95,43 @@ namespace Seguimiento_de_Plantel_Deportivo
                 }
                 else
                 {
-                    Campos_Opcionales();
-                    Repetido();
+                    Campos_Opcionales();                   
                 }
             }            
         }
         private void Campos_Opcionales()
         {
-
+            bool carg;
+            carg = true ;
+            if ((TNacionalidad.Text == "") ||(MTBTelefono.Text == "")||(TDomicilio.Text == ""))
+            {
+               DialogResult = MessageBox.Show("Hay campos vacios \n¿Desea continuar?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                if (DialogResult == DialogResult.Yes)
+                {
+                    carg = true;
+                }
+                //este es el problema
+                else if (DialogResult == DialogResult.No)
+                {
+                    if (TNacionalidad.Text == "")
+                    {
+                        TNacionalidad.Focus();
+                    }
+                    if (!MTBTelefono.MaskFull)
+                    {
+                        MTBTelefono.Focus();
+                    }
+                    if (TDomicilio.Text == "")
+                    {
+                        TDomicilio.Focus();
+                    }
+                    carg = false;
+                }
+            }
+            if (carg == true)
+            {
+                    Repetido();    
+            }
         }
 
         private void CargaJugador()

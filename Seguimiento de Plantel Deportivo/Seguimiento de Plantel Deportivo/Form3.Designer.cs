@@ -58,7 +58,7 @@
             // MTBDni
             // 
             this.MTBDni.Location = new System.Drawing.Point(130, 27);
-            this.MTBDni.Mask = "99.999.999";
+            this.MTBDni.Mask = "99,999,999";
             this.MTBDni.Name = "MTBDni";
             this.MTBDni.Size = new System.Drawing.Size(100, 20);
             this.MTBDni.TabIndex = 1;

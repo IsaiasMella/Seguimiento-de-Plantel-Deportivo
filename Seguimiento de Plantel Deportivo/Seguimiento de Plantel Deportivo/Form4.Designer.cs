@@ -49,6 +49,7 @@
             this.BBuscarLesion = new System.Windows.Forms.Button();
             this.LJugador = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.BBuscar = new System.Windows.Forms.Button();
             this.GBCargar.SuspendLayout();
             this.GBLesion.SuspendLayout();
             this.SuspendLayout();
@@ -62,6 +63,7 @@
             this.GBCargar.Controls.Add(this.TApellido);
             this.GBCargar.Controls.Add(this.Tlesion);
             this.GBCargar.Controls.Add(this.label10);
+            this.GBCargar.Controls.Add(this.BBuscar);
             this.GBCargar.Controls.Add(this.BCargar);
             this.GBCargar.Controls.Add(this.label9);
             this.GBCargar.Controls.Add(this.label5);
@@ -87,7 +89,7 @@
             // MTBdniCarga
             // 
             this.MTBdniCarga.Location = new System.Drawing.Point(130, 19);
-            this.MTBdniCarga.Mask = "99.999.999";
+            this.MTBdniCarga.Mask = "99,999,999";
             this.MTBdniCarga.Name = "MTBdniCarga";
             this.MTBdniCarga.Size = new System.Drawing.Size(108, 20);
             this.MTBdniCarga.TabIndex = 3;
@@ -222,7 +224,7 @@
             // MTBdniBusquedaDeLesion
             // 
             this.MTBdniBusquedaDeLesion.Location = new System.Drawing.Point(96, 28);
-            this.MTBdniBusquedaDeLesion.Mask = "99.999.999";
+            this.MTBdniBusquedaDeLesion.Mask = "99,999,999";
             this.MTBdniBusquedaDeLesion.Name = "MTBdniBusquedaDeLesion";
             this.MTBdniBusquedaDeLesion.Size = new System.Drawing.Size(100, 20);
             this.MTBdniBusquedaDeLesion.TabIndex = 3;
@@ -255,6 +257,16 @@
             this.label4.Size = new System.Drawing.Size(26, 13);
             this.label4.TabIndex = 0;
             this.label4.Text = "DNI";
+            // 
+            // BBuscar
+            // 
+            this.BBuscar.Location = new System.Drawing.Point(266, 50);
+            this.BBuscar.Name = "BBuscar";
+            this.BBuscar.Size = new System.Drawing.Size(75, 23);
+            this.BBuscar.TabIndex = 1;
+            this.BBuscar.Text = "Buscar";
+            this.BBuscar.UseVisualStyleBackColor = true;
+            this.BBuscar.Click += new System.EventHandler(this.BBuscar_Click);
             // 
             // FLesion
             // 
@@ -296,5 +308,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label LJugador;
         private System.Windows.Forms.MaskedTextBox MTBTiempoEstimadoDeLesion;
+        private System.Windows.Forms.Button BBuscar;
     }
 }

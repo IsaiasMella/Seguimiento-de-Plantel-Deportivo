@@ -45,13 +45,13 @@
             this.LBLesiones = new System.Windows.Forms.ListBox();
             this.CBLesion = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.BBuscarContratos = new System.Windows.Forms.Button();
-            this.CBContratos = new System.Windows.Forms.ComboBox();
             this.DGVContratos = new System.Windows.Forms.DataGridView();
             this.NombrePersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DuracionContrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FechaFinalizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BBuscarContratos = new System.Windows.Forms.Button();
+            this.CBContratos = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -216,10 +216,10 @@
             this.CBLesion.FormattingEnabled = true;
             this.CBLesion.Items.AddRange(new object[] {
             "Todos",
-            "Arqueros",
-            "Defensores",
-            "Mediocampistas",
-            "Delanteros"});
+            "Arquero",
+            "Defensor",
+            "Mediocampista",
+            "Delantero"});
             this.CBLesion.Location = new System.Drawing.Point(42, 43);
             this.CBLesion.Name = "CBLesion";
             this.CBLesion.Size = new System.Drawing.Size(121, 21);
@@ -237,28 +237,6 @@
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Contratos";
-            // 
-            // BBuscarContratos
-            // 
-            this.BBuscarContratos.Location = new System.Drawing.Point(64, 70);
-            this.BBuscarContratos.Name = "BBuscarContratos";
-            this.BBuscarContratos.Size = new System.Drawing.Size(75, 23);
-            this.BBuscarContratos.TabIndex = 5;
-            this.BBuscarContratos.Text = "Buscar";
-            this.BBuscarContratos.UseVisualStyleBackColor = true;
-            this.BBuscarContratos.Click += new System.EventHandler(this.BBuscarContratos_Click);
-            // 
-            // CBContratos
-            // 
-            this.CBContratos.FormattingEnabled = true;
-            this.CBContratos.Items.AddRange(new object[] {
-            "Todos",
-            "Jugadores",
-            "Cuerpo Técnico"});
-            this.CBContratos.Location = new System.Drawing.Point(42, 43);
-            this.CBContratos.Name = "CBContratos";
-            this.CBContratos.Size = new System.Drawing.Size(121, 21);
-            this.CBContratos.TabIndex = 4;
             // 
             // DGVContratos
             // 
@@ -293,6 +271,28 @@
             // 
             this.FechaFinalizacion.HeaderText = "Fecha de Finalización";
             this.FechaFinalizacion.Name = "FechaFinalizacion";
+            // 
+            // BBuscarContratos
+            // 
+            this.BBuscarContratos.Location = new System.Drawing.Point(64, 70);
+            this.BBuscarContratos.Name = "BBuscarContratos";
+            this.BBuscarContratos.Size = new System.Drawing.Size(75, 23);
+            this.BBuscarContratos.TabIndex = 5;
+            this.BBuscarContratos.Text = "Buscar";
+            this.BBuscarContratos.UseVisualStyleBackColor = true;
+            this.BBuscarContratos.Click += new System.EventHandler(this.BBuscarContratos_Click);
+            // 
+            // CBContratos
+            // 
+            this.CBContratos.FormattingEnabled = true;
+            this.CBContratos.Items.AddRange(new object[] {
+            "Todos",
+            "Jugadores",
+            "Cuerpo Técnico"});
+            this.CBContratos.Location = new System.Drawing.Point(42, 43);
+            this.CBContratos.Name = "CBContratos";
+            this.CBContratos.Size = new System.Drawing.Size(121, 21);
+            this.CBContratos.TabIndex = 4;
             // 
             // FSeguimientoDePlantelDepo
             // 
