@@ -32,7 +32,7 @@
             this.MTBDni = new System.Windows.Forms.MaskedTextBox();
             this.BModificar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.GBCrearContratos = new System.Windows.Forms.GroupBox();
             this.LDuracionDeContrato = new System.Windows.Forms.Label();
             this.BConfirmar = new System.Windows.Forms.Button();
             this.DTPFechaInicio = new System.Windows.Forms.DateTimePicker();
@@ -43,7 +43,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.MTBSueldo = new System.Windows.Forms.MaskedTextBox();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.GBCrearContratos.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -85,24 +85,24 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Buscar";
             // 
-            // groupBox2
+            // GBCrearContratos
             // 
-            this.groupBox2.Controls.Add(this.LDuracionDeContrato);
-            this.groupBox2.Controls.Add(this.BConfirmar);
-            this.groupBox2.Controls.Add(this.DTPFechaInicio);
-            this.groupBox2.Controls.Add(this.DTPFechaFinalizacionContrato_CrearContrato);
-            this.groupBox2.Controls.Add(this.LPersona);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.MTBSueldo);
-            this.groupBox2.Location = new System.Drawing.Point(12, 136);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(350, 240);
-            this.groupBox2.TabIndex = 5;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Crear Contrato";
-            this.groupBox2.Visible = false;
+            this.GBCrearContratos.Controls.Add(this.LDuracionDeContrato);
+            this.GBCrearContratos.Controls.Add(this.BConfirmar);
+            this.GBCrearContratos.Controls.Add(this.DTPFechaInicio);
+            this.GBCrearContratos.Controls.Add(this.DTPFechaFinalizacionContrato_CrearContrato);
+            this.GBCrearContratos.Controls.Add(this.LPersona);
+            this.GBCrearContratos.Controls.Add(this.label5);
+            this.GBCrearContratos.Controls.Add(this.label6);
+            this.GBCrearContratos.Controls.Add(this.label4);
+            this.GBCrearContratos.Controls.Add(this.MTBSueldo);
+            this.GBCrearContratos.Location = new System.Drawing.Point(12, 136);
+            this.GBCrearContratos.Name = "GBCrearContratos";
+            this.GBCrearContratos.Size = new System.Drawing.Size(350, 240);
+            this.GBCrearContratos.TabIndex = 5;
+            this.GBCrearContratos.TabStop = false;
+            this.GBCrearContratos.Text = "Crear Contrato";
+            this.GBCrearContratos.Visible = false;
             // 
             // LDuracionDeContrato
             // 
@@ -186,14 +186,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(377, 386);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.GBCrearContratos);
             this.Controls.Add(this.groupBox1);
             this.Name = "FContratos";
             this.Text = "Contratos";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.GBCrearContratos.ResumeLayout(false);
+            this.GBCrearContratos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -204,7 +204,7 @@
         private System.Windows.Forms.MaskedTextBox MTBDni;
         private System.Windows.Forms.Button BModificar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox GBCrearContratos;
         private System.Windows.Forms.Label LDuracionDeContrato;
         private System.Windows.Forms.Button BConfirmar;
         private System.Windows.Forms.DateTimePicker DTPFechaInicio;

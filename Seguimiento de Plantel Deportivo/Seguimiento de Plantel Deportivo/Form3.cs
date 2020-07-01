@@ -12,6 +12,8 @@ namespace Seguimiento_de_Plantel_Deportivo
 {
     public partial class FContratos : Form
     {
+        public List<Persona> parListPersona;
+        public List<Lesion> parListLesion;
         public FContratos()
         {
             InitializeComponent();
@@ -47,6 +49,7 @@ namespace Seguimiento_de_Plantel_Deportivo
                 MessageBox.Show("Ingrese DNI", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MTBDni.Focus();
             }
+            GBCrearContratos.Visible = true;
             /*else foreach (int _dni in < NombreDeLaLista >.dni)
             {
                 {

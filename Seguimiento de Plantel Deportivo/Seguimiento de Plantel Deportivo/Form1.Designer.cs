@@ -33,7 +33,7 @@
             this.contratosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CBPiernaHabil = new System.Windows.Forms.ComboBox();
             this.LBJugadores = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CBJugador = new System.Windows.Forms.ComboBox();
@@ -42,12 +42,12 @@
             this.BBuscarJugador = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.BBuscarLesion = new System.Windows.Forms.Button();
-            this.listBox4 = new System.Windows.Forms.ListBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.LBLesiones = new System.Windows.Forms.ListBox();
+            this.CBLesion = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.BBuscarContratos = new System.Windows.Forms.Button();
-            this.listBox2 = new System.Windows.Forms.ListBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.LBContratos = new System.Windows.Forms.ListBox();
+            this.CBContratos = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -64,7 +64,7 @@
             this.salirToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(640, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1452, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -80,29 +80,32 @@
             this.contratosToolStripMenuItem.Name = "contratosToolStripMenuItem";
             this.contratosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.contratosToolStripMenuItem.Text = "Contratos";
+            this.contratosToolStripMenuItem.Click += new System.EventHandler(this.contratosToolStripMenuItem_Click);
             // 
             // lesiónToolStripMenuItem
             // 
             this.lesiónToolStripMenuItem.Name = "lesiónToolStripMenuItem";
             this.lesiónToolStripMenuItem.Size = new System.Drawing.Size(53, 20);
             this.lesiónToolStripMenuItem.Text = "Lesión";
+            this.lesiónToolStripMenuItem.Click += new System.EventHandler(this.lesiónToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(41, 20);
             this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
-            // comboBox1
+            // CBPiernaHabil
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.CBPiernaHabil.FormattingEnabled = true;
+            this.CBPiernaHabil.Items.AddRange(new object[] {
             "Derecha",
             "Izquierda"});
-            this.comboBox1.Location = new System.Drawing.Point(26, 83);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 21);
-            this.comboBox1.TabIndex = 1;
+            this.CBPiernaHabil.Location = new System.Drawing.Point(26, 83);
+            this.CBPiernaHabil.Name = "CBPiernaHabil";
+            this.CBPiernaHabil.Size = new System.Drawing.Size(150, 21);
+            this.CBPiernaHabil.TabIndex = 1;
             // 
             // LBJugadores
             // 
@@ -150,7 +153,7 @@
             this.groupBox1.Controls.Add(this.BBuscarJugador);
             this.groupBox1.Controls.Add(this.LBJugadores);
             this.groupBox1.Controls.Add(this.CBJugador);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.CBPiernaHabil);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(12, 27);
@@ -174,8 +177,8 @@
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.BBuscarLesion);
-            this.groupBox2.Controls.Add(this.listBox4);
-            this.groupBox2.Controls.Add(this.comboBox2);
+            this.groupBox2.Controls.Add(this.LBLesiones);
+            this.groupBox2.Controls.Add(this.CBLesion);
             this.groupBox2.Location = new System.Drawing.Point(218, 27);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 316);
@@ -192,37 +195,37 @@
             this.BBuscarLesion.Text = "Buscar";
             this.BBuscarLesion.UseVisualStyleBackColor = true;
             // 
-            // listBox4
+            // LBLesiones
             // 
-            this.listBox4.FormattingEnabled = true;
-            this.listBox4.Location = new System.Drawing.Point(29, 139);
-            this.listBox4.Name = "listBox4";
-            this.listBox4.Size = new System.Drawing.Size(150, 160);
-            this.listBox4.TabIndex = 2;
+            this.LBLesiones.FormattingEnabled = true;
+            this.LBLesiones.Location = new System.Drawing.Point(29, 139);
+            this.LBLesiones.Name = "LBLesiones";
+            this.LBLesiones.Size = new System.Drawing.Size(150, 160);
+            this.LBLesiones.TabIndex = 2;
             // 
-            // comboBox2
+            // CBLesion
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.CBLesion.FormattingEnabled = true;
+            this.CBLesion.Items.AddRange(new object[] {
             "Todos",
             "Arqueros",
             "Defensores",
             "Mediocampistas",
             "Delanteros"});
-            this.comboBox2.Location = new System.Drawing.Point(42, 43);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 4;
+            this.CBLesion.Location = new System.Drawing.Point(42, 43);
+            this.CBLesion.Name = "CBLesion";
+            this.CBLesion.Size = new System.Drawing.Size(121, 21);
+            this.CBLesion.TabIndex = 4;
             // 
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.BBuscarContratos);
-            this.groupBox3.Controls.Add(this.listBox2);
-            this.groupBox3.Controls.Add(this.comboBox3);
+            this.groupBox3.Controls.Add(this.LBContratos);
+            this.groupBox3.Controls.Add(this.CBContratos);
             this.groupBox3.Location = new System.Drawing.Point(424, 27);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(200, 316);
+            this.groupBox3.Size = new System.Drawing.Size(676, 316);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Contratos";
@@ -235,32 +238,34 @@
             this.BBuscarContratos.TabIndex = 5;
             this.BBuscarContratos.Text = "Buscar";
             this.BBuscarContratos.UseVisualStyleBackColor = true;
+            this.BBuscarContratos.Click += new System.EventHandler(this.BBuscarContratos_Click);
             // 
-            // listBox2
+            // LBContratos
             // 
-            this.listBox2.FormattingEnabled = true;
-            this.listBox2.Location = new System.Drawing.Point(29, 139);
-            this.listBox2.Name = "listBox2";
-            this.listBox2.Size = new System.Drawing.Size(150, 160);
-            this.listBox2.TabIndex = 2;
+            this.LBContratos.FormattingEnabled = true;
+            this.LBContratos.Location = new System.Drawing.Point(29, 139);
+            this.LBContratos.Name = "LBContratos";
+            this.LBContratos.Size = new System.Drawing.Size(625, 160);
+            this.LBContratos.TabIndex = 2;
             // 
-            // comboBox3
+            // CBContratos
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.CBContratos.FormattingEnabled = true;
+            this.CBContratos.Items.AddRange(new object[] {
+            "Todos",
             "Jugadores",
             "Cuerpo Técnico"});
-            this.comboBox3.Location = new System.Drawing.Point(42, 43);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(121, 21);
-            this.comboBox3.TabIndex = 4;
+            this.CBContratos.Location = new System.Drawing.Point(42, 43);
+            this.CBContratos.Name = "CBContratos";
+            this.CBContratos.Size = new System.Drawing.Size(121, 21);
+            this.CBContratos.TabIndex = 4;
             // 
             // FSeguimientoDePlantelDepo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(640, 356);
+            this.ClientSize = new System.Drawing.Size(1452, 356);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
@@ -287,7 +292,7 @@
         private System.Windows.Forms.ToolStripMenuItem contratosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CBPiernaHabil;
         private System.Windows.Forms.ListBox LBJugadores;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBJugador;
@@ -296,12 +301,12 @@
         private System.Windows.Forms.Button BBuscarJugador;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button BBuscarLesion;
-        private System.Windows.Forms.ListBox listBox4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ListBox LBLesiones;
+        private System.Windows.Forms.ComboBox CBLesion;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button BBuscarContratos;
-        private System.Windows.Forms.ListBox listBox2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ListBox LBContratos;
+        private System.Windows.Forms.ComboBox CBContratos;
     }
 }
 
