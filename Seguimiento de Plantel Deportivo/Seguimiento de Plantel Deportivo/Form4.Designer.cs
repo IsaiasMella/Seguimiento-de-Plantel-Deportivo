@@ -32,7 +32,7 @@
             this.MTBTiempoEstimadoDeLesion = new System.Windows.Forms.MaskedTextBox();
             this.MTBdniCarga = new System.Windows.Forms.MaskedTextBox();
             this.TNombre = new System.Windows.Forms.TextBox();
-            this.DTPFechaDeInicio = new System.Windows.Forms.DateTimePicker();
+            this.DTPFechaDeInicioLesion = new System.Windows.Forms.DateTimePicker();
             this.TApellido = new System.Windows.Forms.TextBox();
             this.Tlesion = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -58,7 +58,7 @@
             this.GBCargar.Controls.Add(this.MTBTiempoEstimadoDeLesion);
             this.GBCargar.Controls.Add(this.MTBdniCarga);
             this.GBCargar.Controls.Add(this.TNombre);
-            this.GBCargar.Controls.Add(this.DTPFechaDeInicio);
+            this.GBCargar.Controls.Add(this.DTPFechaDeInicioLesion);
             this.GBCargar.Controls.Add(this.TApellido);
             this.GBCargar.Controls.Add(this.Tlesion);
             this.GBCargar.Controls.Add(this.label10);
@@ -100,12 +100,12 @@
             this.TNombre.Size = new System.Drawing.Size(108, 20);
             this.TNombre.TabIndex = 2;
             // 
-            // DTPFechaDeInicio
+            // DTPFechaDeInicioLesion
             // 
-            this.DTPFechaDeInicio.Location = new System.Drawing.Point(130, 133);
-            this.DTPFechaDeInicio.Name = "DTPFechaDeInicio";
-            this.DTPFechaDeInicio.Size = new System.Drawing.Size(108, 20);
-            this.DTPFechaDeInicio.TabIndex = 3;
+            this.DTPFechaDeInicioLesion.Location = new System.Drawing.Point(130, 133);
+            this.DTPFechaDeInicioLesion.Name = "DTPFechaDeInicioLesion";
+            this.DTPFechaDeInicioLesion.Size = new System.Drawing.Size(108, 20);
+            this.DTPFechaDeInicioLesion.TabIndex = 3;
             // 
             // TApellido
             // 
@@ -276,7 +276,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox GBCargar;
-        private System.Windows.Forms.DateTimePicker DTPFechaDeInicio;
+        private System.Windows.Forms.DateTimePicker DTPFechaDeInicioLesion;
         private System.Windows.Forms.TextBox Tlesion;
         private System.Windows.Forms.Button BCargar;
         private System.Windows.Forms.Label label5;

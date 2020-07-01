@@ -100,6 +100,7 @@
             // 
             this.CBPiernaHabil.FormattingEnabled = true;
             this.CBPiernaHabil.Items.AddRange(new object[] {
+            "Todos",
             "Derecha",
             "Izquierda"});
             this.CBPiernaHabil.Location = new System.Drawing.Point(26, 83);
@@ -129,6 +130,7 @@
             // 
             this.CBJugador.FormattingEnabled = true;
             this.CBJugador.Items.AddRange(new object[] {
+            "Todos",
             "Arquero",
             "Defensor",
             "Mediocampista",
@@ -194,6 +196,7 @@
             this.BBuscarLesion.TabIndex = 5;
             this.BBuscarLesion.Text = "Buscar";
             this.BBuscarLesion.UseVisualStyleBackColor = true;
+            this.BBuscarLesion.Click += new System.EventHandler(this.BBuscarLesion_Click);
             // 
             // LBLesiones
             // 

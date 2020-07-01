@@ -27,10 +27,10 @@ namespace Seguimiento_de_Plantel_Deportivo
                 MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Tlesion.Focus();
             }
-            else if (DTPFechaDeInicio.Value < DateTime.Today)
+            else if (DTPFechaDeInicioLesion.Value < DateTime.Today)
             {
                 MessageBox.Show("Ingrese una Fecha valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                DTPFechaDeInicio.Focus();
+                DTPFechaDeInicioLesion.Focus();
             }
             if (!MTBTiempoEstimadoDeLesion.MaskCompleted)
             {
@@ -54,9 +54,8 @@ namespace Seguimiento_de_Plantel_Deportivo
 
                 if (MTBdniCarga.Text == unJugador.getDni())
                 {
-                    Lesion UnaLesion = new Lesion(Tlesion.Text, DTPFechaDeInicio.Value, Convert.ToInt32(MTBTiempoEstimadoDeLesion.Text));
+                    Lesion UnaLesion = new Lesion(Tlesion.Text, DTPFechaDeInicioLesion.Value, Convert.ToInt32(MTBTiempoEstimadoDeLesion.Text));
                     unJugador.setLesion(UnaLesion);
-
                 }
             }
             MessageBox.Show("La lesion ya fue cargada", "Lesion", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -69,7 +68,7 @@ namespace Seguimiento_de_Plantel_Deportivo
             TNombre.Clear();
             TApellido.Clear();
             Tlesion.Clear();
-            DTPFechaDeInicio.Value = DateTime.Today;
+            DTPFechaDeInicioLesion.Value = DateTime.Today;
             MTBTiempoEstimadoDeLesion.Clear();
         }
 
@@ -86,15 +85,11 @@ namespace Seguimiento_de_Plantel_Deportivo
                 LBLesion.Visible = true;
                 foreach (Jugador unJugador in parListPersona)
                 {
-
                     if (MTBdniBusquedaDeLesion.Text == unJugador.getDni())
                     {
-
                         LBLesion.Items.Add(unJugador.getApellido() + unJugador.getLesion().ToString());
                     }
-
                 }
-
                 //No se que parametros querian pasar al listbox
             }
         }
@@ -108,7 +103,6 @@ namespace Seguimiento_de_Plantel_Deportivo
         {
             foreach (Jugador unJugador in parListPersona)
             {
-
                 if (MTBdniCarga.Text == unJugador.getDni())
                 {
                     TNombre.Enabled = true;

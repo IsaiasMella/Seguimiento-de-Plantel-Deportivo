@@ -54,45 +54,69 @@ namespace Seguimiento_de_Plantel_Deportivo
 
         private void BBuscarJugador_Click(object sender, EventArgs e)
         {
+            LBJugadores.Items.Clear();
+            if ((CBJugador.SelectedIndex == -1) && (Convert.ToString(CBPiernaHabil.SelectedItem) == ""))
+            {
+                MessageBox.Show("Seleccione algun parametro para filtrar a los jugadores", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
             foreach (Jugador UnJugador in ListPersona)
             {
-                LBJugadores.Items.Add(UnJugador.getDni() + " - " + UnJugador.getPosicion());
+                // entra siempre que jugador sea "todos" o no este selec. y pierna sea "todos" o coinsidan las piernas
+                if ((CBJugador.SelectedIndex <= 0) && ((CBPiernaHabil.SelectedIndex <= 0)||(Convert.ToString(CBPiernaHabil.SelectedItem) == UnJugador.getPierna_Habil())))
+                {
+                   LBJugadores.Items.Add(UnJugador.getApellido() + " " + UnJugador.getNombre() + " - " + UnJugador.getPosicion());
+                }
+                //entra a jugador y compara por posicion y mira que pierna no este selec
+                if (Convert.ToString(CBJugador.SelectedItem) == UnJugador.getPosicion()&&(CBPiernaHabil.SelectedIndex == -1))
+                {
+                    LBJugadores.Items.Add(UnJugador.getApellido() + " " + UnJugador.getNombre() + " - " + UnJugador.getPosicion());
+                }
+                //entra a pierna y jugador y si coinsiden los lista
+                if (Convert.ToString(CBPiernaHabil.SelectedItem) == UnJugador.getPierna_Habil()&& (Convert.ToString(CBJugador.SelectedItem) == UnJugador.getPosicion()))
+                {
+                    LBJugadores.Items.Add(UnJugador.getApellido() + " " + UnJugador.getNombre() + " - " + UnJugador.getPosicion());
+                }                
             }
         }
         
         private void BBuscarContratos_Click(object sender, EventArgs e)
-        {
-            int i;
-            i = 1;
+        {           
+            LBContratos.Items.Clear();
             foreach (Persona UnaPersona in ListPersona)
             {
-                if (CBContratos.SelectedIndex == 0)
+                if ((CBContratos.SelectedIndex == 0))
                 {
-                    LBContratos.Items.Clear();
-                    LBContratos.Items.Add(i + "- " + UnaPersona.getApellido() + " " + UnaPersona.getNombre() + " Le quedan " + UnaPersona.getPlazoContrato() + " Años, Inició: " +
-                        UnaPersona.getFechaContratacion() + " y finaliza: ");
-
+                    LBContratos.Items.Add( UnaPersona.getApellido() + " " + UnaPersona.getNombre() + " Le quedan " + UnaPersona.getPlazoContrato() + " Años, Inició: " +
+                    UnaPersona.getFechaContratacion() + " y finaliza: ");
                 }
-                else if ((CBContratos.SelectedIndex == 1) && (UnaPersona is Jugador))
+                if ((UnaPersona is Jugador)&& (CBContratos.SelectedIndex == 1))
                 {
-                    LBContratos.Items.Clear();
-                    foreach (Jugador UnJugador in ListPersona)
-                    {
-                        LBContratos.Items.Add(i + "- " + UnJugador.getApellido() + " " + UnJugador.getNombre() + " Le quedan " + UnJugador.getPlazoContrato() + " Años, Inició: " +
-                            UnJugador.getFechaContratacion() + " y finaliza: ");
-                    }
+                    LBContratos.Items.Add(UnaPersona.getApellido() + " " + UnaPersona.getNombre() + " Le quedan " + UnaPersona.getPlazoContrato() + " Años, Inició: " +
+                    UnaPersona.getFechaContratacion() + " y finaliza: ");
                 }
-                else if ((CBContratos.SelectedIndex == 2)&&(UnaPersona is Cuerpo_Tecnico))
+                if ((UnaPersona is Cuerpo_Tecnico)&& (CBContratos.SelectedIndex == 2))
                 {
-                    LBContratos.Items.Clear();
-                    foreach (Cuerpo_Tecnico UnCT in ListPersona)
-                    {
-                        LBContratos.Items.Add(i + "- " + UnCT.getApellido() + " " + UnCT.getNombre() + " Le quedan " + UnCT.getPlazoContrato() + " Años, Inició: " +
-                            UnCT.getFechaContratacion() + " y finaliza: ");
-                    }
+                    LBContratos.Items.Add(UnaPersona.getApellido() + " " + UnaPersona.getNombre() + " Le quedan " + UnaPersona.getPlazoContrato() + " Años, Inició: " +
+                    UnaPersona.getFechaContratacion() + " y finaliza: ");
                 }
             }
-                
-        }        
+                                 
+        }
+
+        private void BBuscarLesion_Click(object sender, EventArgs e)
+        {
+            LBLesiones.Items.Clear();
+            foreach (Jugador UnJugador in ListPersona)
+            {
+                if (CBLesion.SelectedIndex == 0)
+                {
+                    LBLesiones.Items.Add("El tipo de lesion es: "+ UnJugador.getLesion()+ " ,se lesiono el: "+ UnJugador.getLesion().getFecha_De_Inicio_De_Lesion() + " El tiepo estimado de recuperacion es " + UnJugador.getLesion().getTiempo_Estimado_De_Recuperacion()) ;
+                }
+                if ((Convert.ToString(CBLesion.SelectedItem )== UnJugador.getPosicion())&& (CBLesion.SelectedIndex > 0))
+                {
+                    LBLesiones.Items.Add("El tipo de lesion es: " + UnJugador.getLesion() + " ,se lesiono el: " + UnJugador.getLesion().getFecha_De_Inicio_De_Lesion() + " El tiepo estimado de recuperacion es " + UnJugador.getLesion().getTiempo_Estimado_De_Recuperacion());
+                }                
+            }
+        }
     }
 }
