@@ -80,27 +80,42 @@ namespace Seguimiento_de_Plantel_Deportivo
         }
         
         private void BBuscarContratos_Click(object sender, EventArgs e)
-        {           
-            LBContratos.Items.Clear();
+        {
+            DGVContratos.Rows.Clear();
             foreach (Persona UnaPersona in ListPersona)
             {
                 if ((CBContratos.SelectedIndex == 0))
                 {
-                    LBContratos.Items.Add( UnaPersona.getApellido() + " " + UnaPersona.getNombre() + " Le quedan " + UnaPersona.getPlazoContrato() + " Años, Inició: " +
-                    UnaPersona.getFechaContratacion() + " y finaliza: ");
+                    int n = DGVContratos.Rows.Add();
+                    DGVContratos.Rows[n].Cells[0].Value = UnaPersona.getApellido() + " " + UnaPersona.getNombre();
+                    DGVContratos.Rows[n].Cells[1].Value = UnaPersona.getPlazoContrato();
+                    DGVContratos.Rows[n].Cells[2].Value = UnaPersona.getFechaContratacion();
+                    DGVContratos.Rows[n].Cells[3].Value = "fecha finalizacion";
+
+                    DGVContratos.Visible = true;
+
                 }
-                if ((UnaPersona is Jugador)&& (CBContratos.SelectedIndex == 1))
+                if ((UnaPersona is Jugador) && (CBContratos.SelectedIndex == 1))
                 {
-                    LBContratos.Items.Add(UnaPersona.getApellido() + " " + UnaPersona.getNombre() + " Le quedan " + UnaPersona.getPlazoContrato() + " Años, Inició: " +
-                    UnaPersona.getFechaContratacion() + " y finaliza: ");
+
+                    int J = DGVContratos.Rows.Add();
+                    DGVContratos.Rows[J].Cells[0].Value = UnaPersona.getApellido() + " " + UnaPersona.getNombre();
+                    DGVContratos.Rows[J].Cells[1].Value = UnaPersona.getPlazoContrato();
+                    DGVContratos.Rows[J].Cells[2].Value = UnaPersona.getFechaContratacion();
+                    DGVContratos.Rows[J].Cells[3].Value = "fecha finalizacion";
+                    DGVContratos.Visible = true;
                 }
-                if ((UnaPersona is Cuerpo_Tecnico)&& (CBContratos.SelectedIndex == 2))
+                if ((UnaPersona is Cuerpo_Tecnico) && (CBContratos.SelectedIndex == 2))
                 {
-                    LBContratos.Items.Add(UnaPersona.getApellido() + " " + UnaPersona.getNombre() + " Le quedan " + UnaPersona.getPlazoContrato() + " Años, Inició: " +
-                    UnaPersona.getFechaContratacion() + " y finaliza: ");
+                    int T = DGVContratos.Rows.Add();
+                    DGVContratos.Rows[T].Cells[0].Value = UnaPersona.getApellido() + " " + UnaPersona.getNombre();
+                    DGVContratos.Rows[T].Cells[1].Value = UnaPersona.getPlazoContrato();
+                    DGVContratos.Rows[T].Cells[2].Value = UnaPersona.getFechaContratacion();
+                    DGVContratos.Rows[T].Cells[3].Value = "fecha finalizacion";
+                    DGVContratos.Visible = true;
                 }
             }
-                                 
+
         }
 
         private void BBuscarLesion_Click(object sender, EventArgs e)

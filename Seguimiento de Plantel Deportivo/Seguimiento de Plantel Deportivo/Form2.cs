@@ -20,7 +20,7 @@ namespace Seguimiento_de_Plantel_Deportivo
         {
             InitializeComponent();           
         }
-        private void Campos_Completos()
+        private void Campos_Obligatorios_Completos()
         {
             string sexo;            
             if (!MTBdni.MaskFull)
@@ -38,21 +38,8 @@ namespace Seguimiento_de_Plantel_Deportivo
                 MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 TApellido.Focus();
             }
-            else if (TNacionalidad.Text == "")
-            {
-                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                TNacionalidad.Focus();
-            }
-            if (!MTBTelefono.MaskFull)
-            {
-                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MTBTelefono.Focus();
-            }
-            else if (TDomicilio.Text == "")
-            {
-                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                TDomicilio.Focus();
-            }
+            //a-lsdfjas-ldknas-dkas-ldnasdlknasdln
+            //MessageBox.Show("Hay campos vacios \n¿Desea continuar?, "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
             else if (DTPFechaDeNacimiento.Value >= DateTime.Today)
             {
                 MessageBox.Show("Ingrese una Fecha valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -93,6 +80,7 @@ namespace Seguimiento_de_Plantel_Deportivo
                 }                
                 else
                 {
+                    Campos_Opcionales();
                     Repetido();          
                 }
             }
@@ -110,9 +98,14 @@ namespace Seguimiento_de_Plantel_Deportivo
                 }
                 else
                 {
+                    Campos_Opcionales();
                     Repetido();
                 }
             }            
+        }
+        private void Campos_Opcionales()
+        {
+
         }
 
         private void CargaJugador()
@@ -181,7 +174,7 @@ namespace Seguimiento_de_Plantel_Deportivo
         }
         private void BGuardar_Click(object sender, EventArgs e)
         {
-            Campos_Completos();         
+            Campos_Obligatorios_Completos();           
         }
 
         private void BContrato_Click(object sender, EventArgs e)

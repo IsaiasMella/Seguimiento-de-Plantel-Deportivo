@@ -46,12 +46,17 @@
             this.CBLesion = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.BBuscarContratos = new System.Windows.Forms.Button();
-            this.LBContratos = new System.Windows.Forms.ListBox();
             this.CBContratos = new System.Windows.Forms.ComboBox();
+            this.DGVContratos = new System.Windows.Forms.DataGridView();
+            this.NombrePersona = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DuracionContrato = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaInicio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FechaFinalizacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.DGVContratos)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -223,8 +228,8 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox3.Controls.Add(this.DGVContratos);
             this.groupBox3.Controls.Add(this.BBuscarContratos);
-            this.groupBox3.Controls.Add(this.LBContratos);
             this.groupBox3.Controls.Add(this.CBContratos);
             this.groupBox3.Location = new System.Drawing.Point(424, 27);
             this.groupBox3.Name = "groupBox3";
@@ -243,14 +248,6 @@
             this.BBuscarContratos.UseVisualStyleBackColor = true;
             this.BBuscarContratos.Click += new System.EventHandler(this.BBuscarContratos_Click);
             // 
-            // LBContratos
-            // 
-            this.LBContratos.FormattingEnabled = true;
-            this.LBContratos.Location = new System.Drawing.Point(29, 139);
-            this.LBContratos.Name = "LBContratos";
-            this.LBContratos.Size = new System.Drawing.Size(625, 160);
-            this.LBContratos.TabIndex = 2;
-            // 
             // CBContratos
             // 
             this.CBContratos.FormattingEnabled = true;
@@ -262,6 +259,40 @@
             this.CBContratos.Name = "CBContratos";
             this.CBContratos.Size = new System.Drawing.Size(121, 21);
             this.CBContratos.TabIndex = 4;
+            // 
+            // DGVContratos
+            // 
+            this.DGVContratos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DGVContratos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NombrePersona,
+            this.DuracionContrato,
+            this.FechaInicio,
+            this.FechaFinalizacion});
+            this.DGVContratos.Location = new System.Drawing.Point(42, 162);
+            this.DGVContratos.Name = "DGVContratos";
+            this.DGVContratos.Size = new System.Drawing.Size(550, 150);
+            this.DGVContratos.TabIndex = 6;
+            this.DGVContratos.Visible = false;
+            // 
+            // NombrePersona
+            // 
+            this.NombrePersona.HeaderText = "Apellido y Nombre";
+            this.NombrePersona.Name = "NombrePersona";
+            // 
+            // DuracionContrato
+            // 
+            this.DuracionContrato.HeaderText = "Duración Contrato";
+            this.DuracionContrato.Name = "DuracionContrato";
+            // 
+            // FechaInicio
+            // 
+            this.FechaInicio.HeaderText = "Fecha Inicio";
+            this.FechaInicio.Name = "FechaInicio";
+            // 
+            // FechaFinalizacion
+            // 
+            this.FechaFinalizacion.HeaderText = "Fecha de Finalización";
+            this.FechaFinalizacion.Name = "FechaFinalizacion";
             // 
             // FSeguimientoDePlantelDepo
             // 
@@ -283,6 +314,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.DGVContratos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,8 +340,12 @@
         private System.Windows.Forms.ComboBox CBLesion;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button BBuscarContratos;
-        private System.Windows.Forms.ListBox LBContratos;
         private System.Windows.Forms.ComboBox CBContratos;
+        private System.Windows.Forms.DataGridView DGVContratos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NombrePersona;
+        private System.Windows.Forms.DataGridViewTextBoxColumn DuracionContrato;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaInicio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FechaFinalizacion;
     }
 }
 
