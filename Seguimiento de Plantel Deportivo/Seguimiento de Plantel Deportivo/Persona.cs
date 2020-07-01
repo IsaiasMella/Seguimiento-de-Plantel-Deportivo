@@ -10,7 +10,7 @@ namespace Seguimiento_de_Plantel_Deportivo
     public abstract class Persona
     {
         #region atributos
-        protected int _dni;
+        protected string _dni;
         protected string _nombre;
         protected string _apellido;
         protected string _domicilio;
@@ -25,7 +25,7 @@ namespace Seguimiento_de_Plantel_Deportivo
         #region propiedades
         #endregion
         #region consultas
-        public int getDni()
+        public string getDni()
         { return _dni; }
         public string getNombre()
         { return _nombre; }
@@ -47,13 +47,13 @@ namespace Seguimiento_de_Plantel_Deportivo
         { return _plazoContrato; }
         public DateTime getFechaContratacion()
         { return _fechaContratacion; }
-        public  abstract int Edad();        
-        
+        public abstract int Edad();
+
         #endregion
         #region comandos
-        public void setDni(int valor)
-        {           
-             this._dni = valor; 
+        public void setDni(string valor)
+        {
+            this._dni = valor;
         }
         public void setNombre(string valor)
         { this._nombre = valor; }
@@ -84,7 +84,7 @@ namespace Seguimiento_de_Plantel_Deportivo
             if (valor >= 1)
             {
                 this._plazoContrato = valor;
-            }             
+            }
         }
         public void setFechaContratacion(DateTime valor)//La fecha de contratacion tiene que ser anterior o igual al dia en curso
         {
@@ -93,8 +93,8 @@ namespace Seguimiento_de_Plantel_Deportivo
         }
         #endregion
         #region contructores
-      
-        public Persona(int dni, string nombre, string apellido, string domicilio, string telefono,string nacionalidad, DateTime fechaNac, string sexo,double sueldo,int plazoContrato, DateTime fechaContratacion)
+
+        public Persona(string dni, string nombre, string apellido, string domicilio, string telefono, string nacionalidad, DateTime fechaNac, string sexo)
         {
             this._dni = dni;
             this._nombre = nombre;
@@ -104,13 +104,13 @@ namespace Seguimiento_de_Plantel_Deportivo
             this._nacionalidad = nacionalidad;
             this._fechaNac = fechaNac;
             this._Sexo = sexo;
-            this._sueldo = sueldo;
-            this._plazoContrato = plazoContrato;
-            this._fechaContratacion = fechaContratacion;
+            this._sueldo = 0;
+            this._plazoContrato = 1;
+            this._fechaContratacion = DateTime.Today;
         }
         public Persona()
-        { 
-            this._dni = 0;
+        {
+            this._dni = "";
             this._nombre = "";
             this._apellido = "";
             this._domicilio = "";

@@ -32,7 +32,7 @@ namespace Seguimiento_de_Plantel_Deportivo
         }
         #endregion
         #region Comandos
-        public void setCargo (string Cargo_CT)
+        public void setCargo(string Cargo_CT)
         {
             this._cargo = Cargo_CT;
         }
@@ -42,13 +42,13 @@ namespace Seguimiento_de_Plantel_Deportivo
         }
         #endregion
         #region Constructores
-        public Cuerpo_Tecnico(int dni, string nombre, string apellido, string domicilio, string telefono, string nacionalidad, DateTime fechaNac, string sexo, double sueldo, int plazoContrato, DateTime fechaContratacion, string Cargo_CT, string Especialidad_CT) : base(dni, nombre, apellido, domicilio, telefono, nacionalidad, fechaNac, sexo ,sueldo, plazoContrato, fechaContratacion)
+        public Cuerpo_Tecnico(string dni, string nombre, string apellido, string domicilio, string telefono, string nacionalidad, DateTime fechaNac, string sexo, string Cargo_CT, string Especialidad_CT) : base(dni, nombre, apellido, domicilio, telefono, nacionalidad, fechaNac, sexo)
         {
             this._cargo = Cargo_CT;
             this._especialidad = Especialidad_CT;
-            
+
         }
-        
+
         #endregion
     }
 }

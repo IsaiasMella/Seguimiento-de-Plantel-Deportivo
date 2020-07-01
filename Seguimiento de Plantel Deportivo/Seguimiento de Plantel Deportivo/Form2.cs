@@ -90,8 +90,7 @@ namespace Seguimiento_de_Plantel_Deportivo
                 {
                     MessageBox.Show("Seleccione la Pierna Habil", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     CBPiernaHabil.Focus();
-                }
-                //guarda en la lista todo respecto al jugador
+                }                
                 else
                 {
                     Repetido();          
@@ -118,31 +117,28 @@ namespace Seguimiento_de_Plantel_Deportivo
         }
 
         private void Carga()
-        {
-          
-            foreach (Jugador nuevo in parListPersona)
-            {
-                #region Agregar Nuevos Items a la Lista
-                //parListPersona.Add(Convert.ToInt32(MTBdni.Text));
-                #endregion
-            }
-            
+        {           
+            MessageBox.Show("Entro a Carga");
+            Jugador NuevoJugador = new Jugador(MTBdni.Text, TNombre.Text, TApellido.Text, TDomicilio.Text, MTBTelefono.Text, TNacionalidad.Text, DTPFechaDeNacimiento.Value, RBMasculino.Text, NUDDorsal.Value, CBPosicion.Text, CBPiernaHabil.Text);
+            parListPersona.Add(NuevoJugador);
+            MTBdni.Clear();
+            TNombre.Clear();
+            TApellido.Clear();
         }
         private void Repetido()
         {
-            foreach (int Dni in parListPersona.Dni )
+            MessageBox.Show("Entro a Repetido");
+            foreach (Persona nuevo in parListPersona)
             {
-                if (MTBdni.Text == parListPersona.Dni)
+                if (MTBdni.Text == Convert.ToString(nuevo.getDni()))
                 {
-                    MessageBox.Show("Dni repetdio", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Dni repetido", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     MTBdni.Focus();
                 }
-                else
-                {
-                    Carga();
-                }
+
             }
-        }       
+            Carga();
+        }
         private void BGuardar_Click(object sender, EventArgs e)
         {
             Campos_Completos();
@@ -168,41 +164,50 @@ namespace Seguimiento_de_Plantel_Deportivo
 
         private void BBuscar_Click(object sender, EventArgs e)
         {
-           /* if (!MTBdni.MaskFull)
+            if (!MTBdni.MaskFull)
             {
                 MessageBox.Show("Ingrese DNI para buscar el Empleado", "Error", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 MTBdni.Focus();
             }
-            else foreach (int _dni in < NombreDeLaLista>.Dni)
-            {
-                 {
-                      if (MTBdni.Text == < NombreDeLaLista >.Dni)
-                      {
-                            TNombre.Text = < NombreDeLaLista >.Nombre;
-                            TApellido.Text = < NombreDeLaLista >.Apellido;
-                            TNacionalidad.Text = < NombreDeLaLista >.Nacionalidad;
-                            MTBTelefono.Text = < NombreDeLaLista >.Telefono;
-                            TDomicilio.Text = < NombreDeLaLista >.Telefono;
-                            DTPFechaDeNacimiento.Value = < NombreDeLaLista >.DTPFechaDeNacimiento;
-                            RBMasculino.Checked = < NombreDeLaLista > .SexoMasculino;
-                            RBFemenino.Checked = < NombreDeLaLista > .SexoFemenino;
-                            RBCuerpoTecnico.Checked = < NombreDeLaLista > .CuerpoTecnico;
-                            RBJugador.Checked = < NombreDeLaLista > .Jugador;
-                            if (RBJugador.Checked)
-                            {
-                                NUDDorsal.Value = < NombreDeLaLista > .Dorsal;
-                                CBPosicion.SelectedIndex = < NombreDeLaLista > .Posicion;
-                                CBPiernaHabil.SelectedIndex = < NombreDeLaLista > .PiernaHabil;
-                            }
-                            if (RBCuerpoTecnico.Checked)
-                            {
-                                TCargo.Text = < NombreDeLaLista > .Cargo;
-                                TEspecialidad.Text = < NombreDeLaLista > .Especialidad;
-                            }
-                      }
-                 }
-                
-            }  */          
+            else
+                foreach (Jugador unPersona in parListPersona)
+                {
+                    if (MTBdni.Text == unPersona.getDni())
+                    {
+                        TNombre.Text = unPersona.getNombre();
+                        TApellido.Text = unPersona.getApellido();
+                        TNacionalidad.Text = unPersona.getNacionalidad();
+                        MTBTelefono.Text = unPersona.getTelefono();
+                        TDomicilio.Text = unPersona.getDomicilio();
+                        DTPFechaDeNacimiento.Value = unPersona.getFechaNac();
+                        if (unPersona.getSexo() == "Masculino")
+                        { RBMasculino.Checked = true; }
+                        else
+                        { RBFemenino.Checked = true; }
+
+                        RBJugador.Checked = true;
+                        NUDDorsal.Value = unPersona.getDorsal();
+                        CBPosicion.Text = unPersona.getPosicion();
+                        CBPiernaHabil.Text = unPersona.getPierna_Habil();
+                    }
+                    //RBCuerpoTecnico.Checked = < NombreDeLaLista > .CuerpoTecnico;
+                    //RBJugador.Checked = < NombreDeLaLista > .Jugador;
+                    //if (RBJugador.Checked)
+                    //{
+                    //    NUDDorsal.Value = < NombreDeLaLista > .Dorsal;
+                    //    CBPosicion.SelectedIndex = < NombreDeLaLista > .Posicion;
+                    //    CBPiernaHabil.SelectedIndex = < NombreDeLaLista > .PiernaHabil;
+                    //}
+                    //if (RBCuerpoTecnico.Checked)
+                    //{
+                    //    TCargo.Text = < NombreDeLaLista > .Cargo;
+                    //    TEspecialidad.Text = < NombreDeLaLista > .Especialidad;
+                    //}
+
+
+
+                }
+
         }
         // Falta hacer boton eliminar
         private void BEliminar_Click(object sender, EventArgs e)

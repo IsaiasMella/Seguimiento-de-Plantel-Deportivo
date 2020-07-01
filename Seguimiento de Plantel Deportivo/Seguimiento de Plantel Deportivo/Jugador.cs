@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Seguimiento_de_Plantel_Deportivo
 {
-    class Jugador: Persona
+    class Jugador : Persona
     {
         #region Atributos
-        private int _dorsal;
+        private decimal _dorsal;
         private string _posicion;
         private string _piernaHabil;
         private Lesion _lesion;
@@ -17,7 +17,7 @@ namespace Seguimiento_de_Plantel_Deportivo
         #region Propiedades
         #endregion
         #region Consultas
-        public int getDorsal()
+        public decimal getDorsal()
         {
             return _dorsal;
         }
@@ -37,7 +37,7 @@ namespace Seguimiento_de_Plantel_Deportivo
         }
         #endregion
         #region Comandos
-        public void setDorsal(int Dorsal_Jugador)
+        public void setDorsal(decimal Dorsal_Jugador)
         {
             if (Dorsal_Jugador >= 1)
             {
@@ -54,13 +54,20 @@ namespace Seguimiento_de_Plantel_Deportivo
         }
         #endregion
         #region Constructores
-        public Jugador(int dni, string nombre, string apellido, string domicilio, string telefono, string nacionalidad, DateTime fechaNac,string sexo ,double sueldo, int plazoContrato, DateTime fechaContratacion, int dorsal, string posicion, string piernaHabil ) : base(dni, nombre, apellido, domicilio, telefono, nacionalidad, fechaNac, sexo,sueldo, plazoContrato, fechaContratacion)
+        public Jugador(string dni, string nombre, string apellido, string domicilio, string telefono, string nacionalidad, DateTime fechaNac, string sexo, decimal dorsal, string posicion, string piernaHabil) : base(dni, nombre, apellido, domicilio, telefono, nacionalidad, fechaNac, sexo)
         {
             this._dorsal = dorsal;
             this._posicion = posicion;
             this._piernaHabil = piernaHabil;
         }
-       
+        public Jugador()
+        {
+            //int dni, string nombre, string apellido, string domicilio, string telefono, string nacionalidad, DateTime fechaNac, string sexo, decimal dorsal, string posicion, string piernaHabil) : base(dni, nombre, apellido, domicilio, telefono, nacionalidad, fechaNac, sexo
+            this._dorsal = 1;
+            this._posicion = "";
+            this._piernaHabil = "";
+        }
+
         #endregion
     }
 }
