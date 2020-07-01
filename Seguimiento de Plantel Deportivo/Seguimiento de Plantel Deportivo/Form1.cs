@@ -17,6 +17,8 @@ namespace Seguimiento_de_Plantel_Deportivo
         public FSeguimientoDePlantelDepo()
         {
             InitializeComponent();
+            Bitmap img = new Bitmap(Application.StartupPath + @"\img\FondoPrincipal.jpg");
+            this.BackgroundImage = img;
         }
 
         private void FSeguimientoDePlantelDepo_Load(object sender, EventArgs e)
@@ -29,6 +31,22 @@ namespace Seguimiento_de_Plantel_Deportivo
             FPersonal FormPersonal = new FPersonal();
             FormPersonal.parListPersona = ListPersona;
             FormPersonal.Show();
+        }
+
+        private void BBuscarJugador_Click(object sender, EventArgs e)
+        {
+            foreach (Jugador UnJugador in ListPersona)
+            {
+                LBJugadores.Items.Add(UnJugador.getDni() + " - " + UnJugador.getPosicion());
+            }
+        }
+        private void lesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FLesion FormLesion = new FLesion();
+            FormLesion.parListPersona = ListPersona;
+            FormLesion.parListLesion = ListLesion;
+            FormLesion.Show();
+
         }
     }
 }

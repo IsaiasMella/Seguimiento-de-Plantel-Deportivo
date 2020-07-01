@@ -29,6 +29,10 @@ namespace Seguimiento_de_Plantel_Deportivo
         {
             return _piernaHabil;
         }
+        public Lesion getLesion()
+        {
+            return _lesion;
+        }
         public override int Edad()
         {
             int Edad_Persona;
@@ -51,6 +55,11 @@ namespace Seguimiento_de_Plantel_Deportivo
         public void setPierna_Habil(string PH_Jugador)
         {
             this._piernaHabil = PH_Jugador;
+        }
+        public void setLesion(Lesion unLesion)
+        {
+            this._lesion = unLesion;
+
         }
         #endregion
         #region Constructores

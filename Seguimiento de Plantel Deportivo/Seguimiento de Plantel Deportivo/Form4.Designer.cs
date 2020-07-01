@@ -79,7 +79,7 @@
             // MTBTiempoEstimadoDeLesion
             // 
             this.MTBTiempoEstimadoDeLesion.Location = new System.Drawing.Point(130, 160);
-            this.MTBTiempoEstimadoDeLesion.Mask = "00009";
+            this.MTBTiempoEstimadoDeLesion.Mask = "99990";
             this.MTBTiempoEstimadoDeLesion.Name = "MTBTiempoEstimadoDeLesion";
             this.MTBTiempoEstimadoDeLesion.Size = new System.Drawing.Size(108, 20);
             this.MTBTiempoEstimadoDeLesion.TabIndex = 3;
@@ -96,6 +96,7 @@
             // 
             this.TNombre.Location = new System.Drawing.Point(130, 48);
             this.TNombre.Name = "TNombre";
+            this.TNombre.ReadOnly = true;
             this.TNombre.Size = new System.Drawing.Size(108, 20);
             this.TNombre.TabIndex = 2;
             // 
@@ -110,6 +111,7 @@
             // 
             this.TApellido.Location = new System.Drawing.Point(130, 76);
             this.TApellido.Name = "TApellido";
+            this.TApellido.ReadOnly = true;
             this.TApellido.Size = new System.Drawing.Size(108, 20);
             this.TApellido.TabIndex = 2;
             // 

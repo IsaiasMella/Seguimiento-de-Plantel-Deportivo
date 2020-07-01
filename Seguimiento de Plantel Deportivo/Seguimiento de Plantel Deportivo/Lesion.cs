@@ -16,7 +16,7 @@ namespace Seguimiento_de_Plantel_Deportivo
         #region Propiedades
         #endregion
         #region Consultas
-       
+
         public string getTipo_De_Lesion()
         {
             return _tipoDeLesion;
@@ -28,6 +28,11 @@ namespace Seguimiento_de_Plantel_Deportivo
         public int getTiempo_Estimado_De_Recuperacion()
         {
             return _tiempoEstimadoDeRecuperacion;
+        }
+        public override string ToString()
+        {
+
+            return "- Tipo: " + _tipoDeLesion + "- Plazo: " + _tiempoEstimadoDeRecuperacion + " dias";
         }
         #endregion
         #region Comandos

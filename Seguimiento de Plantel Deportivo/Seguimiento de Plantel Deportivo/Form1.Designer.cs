@@ -34,7 +34,7 @@
             this.lesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.LBJugadores = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CBJugador = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,6 +56,7 @@
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.personalToolStripMenuItem,
             this.contratosToolStripMenuItem,
@@ -103,13 +104,14 @@
             this.comboBox1.Size = new System.Drawing.Size(150, 21);
             this.comboBox1.TabIndex = 1;
             // 
-            // listBox1
+            // LBJugadores
             // 
-            this.listBox1.FormattingEnabled = true;
-            this.listBox1.Location = new System.Drawing.Point(26, 139);
-            this.listBox1.Name = "listBox1";
-            this.listBox1.Size = new System.Drawing.Size(150, 160);
-            this.listBox1.TabIndex = 2;
+            this.LBJugadores.BackColor = System.Drawing.SystemColors.Window;
+            this.LBJugadores.FormattingEnabled = true;
+            this.LBJugadores.Location = new System.Drawing.Point(26, 139);
+            this.LBJugadores.Name = "LBJugadores";
+            this.LBJugadores.Size = new System.Drawing.Size(150, 160);
+            this.LBJugadores.TabIndex = 2;
             // 
             // label1
             // 
@@ -144,8 +146,9 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
             this.groupBox1.Controls.Add(this.BBuscarJugador);
-            this.groupBox1.Controls.Add(this.listBox1);
+            this.groupBox1.Controls.Add(this.LBJugadores);
             this.groupBox1.Controls.Add(this.CBJugador);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label2);
@@ -165,9 +168,11 @@
             this.BBuscarJugador.TabIndex = 5;
             this.BBuscarJugador.Text = "Buscar";
             this.BBuscarJugador.UseVisualStyleBackColor = true;
+            this.BBuscarJugador.Click += new System.EventHandler(this.BBuscarJugador_Click);
             // 
             // groupBox2
             // 
+            this.groupBox2.BackColor = System.Drawing.Color.Transparent;
             this.groupBox2.Controls.Add(this.BBuscarLesion);
             this.groupBox2.Controls.Add(this.listBox4);
             this.groupBox2.Controls.Add(this.comboBox2);
@@ -211,6 +216,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.BBuscarContratos);
             this.groupBox3.Controls.Add(this.listBox2);
             this.groupBox3.Controls.Add(this.comboBox3);
@@ -253,6 +259,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(640, 356);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -281,7 +288,7 @@
         private System.Windows.Forms.ToolStripMenuItem lesiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ListBox listBox1;
+        private System.Windows.Forms.ListBox LBJugadores;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox CBJugador;
         private System.Windows.Forms.Label label2;

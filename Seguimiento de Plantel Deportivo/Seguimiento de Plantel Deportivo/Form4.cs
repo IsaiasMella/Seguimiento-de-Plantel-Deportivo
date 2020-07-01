@@ -12,28 +12,17 @@ namespace Seguimiento_de_Plantel_Deportivo
 {
     public partial class FLesion : Form
     {
+        public List<Persona> parListPersona;
+        public List<Lesion> parListLesion;
         public FLesion()
         {
             InitializeComponent();
         }
         private void CamposCompletos()
         {
-            if (!MTBdniCarga.MaskFull)
-            {
-                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                MTBdniCarga.Focus();
-            }
-            else if (TNombre.Text == "")
-            {
-                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                TNombre.Focus();
-            }
-            else if (TApellido.Text == "")
-            {
-                MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                TApellido.Focus();
-            }
-            else if (Tlesion.Text == "")
+
+
+            if (Tlesion.Text == "")
             {
                 MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 Tlesion.Focus();
@@ -43,41 +32,45 @@ namespace Seguimiento_de_Plantel_Deportivo
                 MessageBox.Show("Ingrese una Fecha valida", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 DTPFechaDeInicio.Focus();
             }
-            if (!MTBTiempoEstimadoDeLesion.MaskFull)
+            if (!MTBTiempoEstimadoDeLesion.MaskCompleted)
             {
                 MessageBox.Show("Campo incompleto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 MTBTiempoEstimadoDeLesion.Focus();
             }
             else
             {
-                Repetido();
+                Cargar();
             }
 
         }
         private void Repetido()
         {
-            if ((DTPFechaDeInicio.Value == < Nombre de la lista >.FechaDeLesion) && (Tlesion.Text == < Nombre de la lista >.Lesion ))
-            {
-                MessageBox.Show("La lesion ya fue cargada", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-             else
-            {
-                Cargar();
-            }
 
         }
         private void Cargar()
         {
-            foreach (Lesion nuevo in <Nombre de lista>)
+            foreach (Jugador unJugador in parListPersona)
             {
-                #region Agregar Nuevos Items a la Lista
-                //parListPersona.Add(Convert.ToInt32(MTBdni.Text));
-                #endregion
+
+                if (MTBdniCarga.Text == unJugador.getDni())
+                {
+                    Lesion UnaLesion = new Lesion(Tlesion.Text, DTPFechaDeInicio.Value, Convert.ToInt32(MTBTiempoEstimadoDeLesion.Text));
+                    unJugador.setLesion(UnaLesion);
+
+                }
             }
+            MessageBox.Show("La lesion ya fue cargada", "Lesion", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
         private void BCargar_Click(object sender, EventArgs e)
         {
             CamposCompletos();
+            MTBdniCarga.Clear();
+            TNombre.Clear();
+            TApellido.Clear();
+            Tlesion.Clear();
+            DTPFechaDeInicio.Value = DateTime.Today;
+            MTBTiempoEstimadoDeLesion.Clear();
         }
 
         private void BBuscarLesion_Click(object sender, EventArgs e)
@@ -89,8 +82,40 @@ namespace Seguimiento_de_Plantel_Deportivo
             }
             else
             {
-                LJugador.Text = <TNombre de lista>.Nombre + " " + < TNombre de lista>.Apellido;
+
+                LBLesion.Visible = true;
+                foreach (Jugador unJugador in parListPersona)
+                {
+
+                    if (MTBdniBusquedaDeLesion.Text == unJugador.getDni())
+                    {
+
+                        LBLesion.Items.Add(unJugador.getApellido() + unJugador.getLesion().ToString());
+                    }
+
+                }
+
                 //No se que parametros querian pasar al listbox
+            }
+        }
+
+        private void MTBdniCarga_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BBuscar_Click(object sender, EventArgs e)
+        {
+            foreach (Jugador unJugador in parListPersona)
+            {
+
+                if (MTBdniCarga.Text == unJugador.getDni())
+                {
+                    TNombre.Enabled = true;
+                    TApellido.Enabled = true;
+                    TNombre.Text = unJugador.getNombre();
+                    TApellido.Text = unJugador.getApellido();
+                }
             }
         }
     }
